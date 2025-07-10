@@ -1,0 +1,39 @@
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>pip install --no-cache-dir --constraint constraints.txt -e .
+Obtaining file:///C:/Users/XIY144/Grounded-Segment-Anything/GroundingDINO
+  Installing build dependencies ... done
+  Checking if build backend supports build_editable ... done
+  Getting requirements to build editable ... error
+  error: subprocess-exited-with-error
+
+  × Getting requirements to build editable did not run successfully.
+  │ exit code: 1
+  ╰─> [19 lines of output]
+      Building wheel groundingdino-0.1.0
+      Traceback (most recent call last):
+        File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\pip\_vendor\pyproject_hooks\_in_process\_in_process.py", line 389, in <module>
+          main()
+        File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\pip\_vendor\pyproject_hooks\_in_process\_in_process.py", line 373, in main
+          json_out["return_val"] = hook(**hook_input["kwargs"])
+        File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\pip\_vendor\pyproject_hooks\_in_process\_in_process.py", line 157, in get_requires_for_build_editable
+          return hook(config_settings)
+        File "C:\Users\XIY144\AppData\Local\Temp\pip-build-env-brnuyvbh\overlay\Lib\site-packages\setuptools\build_meta.py", line 473, in get_requires_for_build_editable
+          return self.get_requires_for_build_wheel(config_settings)
+        File "C:\Users\XIY144\AppData\Local\Temp\pip-build-env-brnuyvbh\overlay\Lib\site-packages\setuptools\build_meta.py", line 331, in get_requires_for_build_wheel
+          return self._get_build_requires(config_settings, requirements=[])
+        File "C:\Users\XIY144\AppData\Local\Temp\pip-build-env-brnuyvbh\overlay\Lib\site-packages\setuptools\build_meta.py", line 301, in _get_build_requires
+          self.run_setup()
+        File "C:\Users\XIY144\AppData\Local\Temp\pip-build-env-brnuyvbh\overlay\Lib\site-packages\setuptools\build_meta.py", line 317, in run_setup
+          exec(code, locals())
+        File "<string>", line 194, in <module>
+        File "<string>", line 50, in get_extensions
+      ModuleNotFoundError: No module named 'torch'
+      [end of output]
+
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: subprocess-exited-with-error
+
+× Getting requirements to build editable did not run successfully.
+│ exit code: 1
+╰─> See above for output.
+
+note: This error originates from a subprocess, and is likely not a problem with pip.

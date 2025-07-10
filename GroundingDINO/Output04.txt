@@ -1,0 +1,216 @@
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>set PATH=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\bin;%PATH%
+
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>nvcc --version
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2023 NVIDIA Corporation
+Built on Mon_Apr__3_17:36:15_Pacific_Daylight_Time_2023
+Cuda compilation tools, release 12.1, V12.1.105
+Build cuda_12.1.r12.1/compiler.32688072_0
+
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>where nvcc
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\bin\nvcc.exe
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin\nvcc.exe
+
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>echo %CUDA_HOME%
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1
+
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>echo %BUILD_WITH_CUDA%
+True
+
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>echo %AM_I_DOCKER%
+False
+
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>pip install --verbose --no-cache-dir -e .
+Using pip 25.1.1 from C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\pip (python 3.10)
+Obtaining file:///C:/Users/XIY144/Grounded-Segment-Anything/GroundingDINO
+  Running command pip subprocess to install build dependencies
+  Using pip 25.1.1 from C:\Users\XIY144\.conda\envs\gdino\Lib\site-packages\pip (python 3.10)
+  Collecting setuptools
+    Obtaining dependency information for setuptools from https://files.pythonhosted.org/packages/a3/dc/17031897dae0efacfea57dfd3a82fdd2a2aeb58e0ff71b77b87e44edc772/setuptools-80.9.0-py3-none-any.whl.metadata
+    Using cached setuptools-80.9.0-py3-none-any.whl.metadata (6.6 kB)
+  Collecting torch
+    Obtaining dependency information for torch from https://files.pythonhosted.org/packages/f9/91/3d709cfc5e15995fb3fe7a6b564ce42280d3a55676dad672205e94f34ac9/torch-2.7.1-cp310-cp310-win_amd64.whl.metadata
+    Using cached torch-2.7.1-cp310-cp310-win_amd64.whl.metadata (28 kB)
+  Collecting wheel
+    Obtaining dependency information for wheel from https://files.pythonhosted.org/packages/0b/2c/87f3254fd8ffd29e4c02732eee68a83a1d3c346ae39bc6822dcbcb697f2b/wheel-0.45.1-py3-none-any.whl.metadata
+    Using cached wheel-0.45.1-py3-none-any.whl.metadata (2.3 kB)
+  Collecting filelock (from torch)
+    Obtaining dependency information for filelock from https://files.pythonhosted.org/packages/4d/36/2a115987e2d8c300a974597416d9de88f2444426de9571f4b59b2cca3acc/filelock-3.18.0-py3-none-any.whl.metadata
+    Using cached filelock-3.18.0-py3-none-any.whl.metadata (2.9 kB)
+  Collecting typing-extensions>=4.10.0 (from torch)
+    Obtaining dependency information for typing-extensions>=4.10.0 from https://files.pythonhosted.org/packages/b5/00/d631e67a838026495268c2f6884f3711a15a9a2a96cd244fdaea53b823fb/typing_extensions-4.14.1-py3-none-any.whl.metadata
+    Using cached typing_extensions-4.14.1-py3-none-any.whl.metadata (3.0 kB)
+  Collecting sympy>=1.13.3 (from torch)
+    Obtaining dependency information for sympy>=1.13.3 from https://files.pythonhosted.org/packages/a2/09/77d55d46fd61b4a135c444fc97158ef34a095e5681d0a6c10b75bf356191/sympy-1.14.0-py3-none-any.whl.metadata
+    Using cached sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+    Link requires a different Python (3.10.18 not in: '>=3.11'): https://files.pythonhosted.org/packages/3f/a1/46c1b6e202e3109d2a035b21a7e5534c5bb233ee30752d7f16a0bd4c3989/networkx-3.5rc0-py3-none-any.whl (from https://pypi.org/simple/networkx/) (requires-python:>=3.11)
+    Link requires a different Python (3.10.18 not in: '>=3.11'): https://files.pythonhosted.org/packages/90/7e/0319606a20ced20730806b9f7fe91d8a92f7da63d76a5c388f87d3f7d294/networkx-3.5rc0.tar.gz (from https://pypi.org/simple/networkx/) (requires-python:>=3.11)
+    Link requires a different Python (3.10.18 not in: '>=3.11'): https://files.pythonhosted.org/packages/eb/8d/776adee7bbf76365fdd7f2552710282c79a4ead5d2a46408c9043a2b70ba/networkx-3.5-py3-none-any.whl (from https://pypi.org/simple/networkx/) (requires-python:>=3.11)
+    Link requires a different Python (3.10.18 not in: '>=3.11'): https://files.pythonhosted.org/packages/6c/4f/ccdb8ad3a38e583f214547fd2f7ff1fc160c43a75af88e6aec213404b96a/networkx-3.5.tar.gz (from https://pypi.org/simple/networkx/) (requires-python:>=3.11)
+  Collecting networkx (from torch)
+    Obtaining dependency information for networkx from https://files.pythonhosted.org/packages/b9/54/dd730b32ea14ea797530a4479b2ed46a6fb250f682a9cfb997e968bf0261/networkx-3.4.2-py3-none-any.whl.metadata
+    Using cached networkx-3.4.2-py3-none-any.whl.metadata (6.3 kB)
+  Collecting jinja2 (from torch)
+    Obtaining dependency information for jinja2 from https://files.pythonhosted.org/packages/62/a1/3d680cbfd5f4b8f15abc1d571870c5fc3e594bb582bc3b64ea099db13e56/jinja2-3.1.6-py3-none-any.whl.metadata
+    Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+  Collecting fsspec (from torch)
+    Obtaining dependency information for fsspec from https://files.pythonhosted.org/packages/bb/61/78c7b3851add1481b048b5fdc29067397a1784e2910592bc81bb3f608635/fsspec-2025.5.1-py3-none-any.whl.metadata
+    Using cached fsspec-2025.5.1-py3-none-any.whl.metadata (11 kB)
+  Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch)
+    Obtaining dependency information for mpmath<1.4,>=1.1.0 from https://files.pythonhosted.org/packages/43/e3/7d92a15f894aa0c9c4b49b8ee9ac9850d6e63b03c9c32c0367a13ae62209/mpmath-1.3.0-py3-none-any.whl.metadata
+    Using cached mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+  Collecting MarkupSafe>=2.0 (from jinja2->torch)
+    Obtaining dependency information for MarkupSafe>=2.0 from https://files.pythonhosted.org/packages/44/06/e7175d06dd6e9172d4a69a72592cb3f7a996a9c396eee29082826449bbc3/MarkupSafe-3.0.2-cp310-cp310-win_amd64.whl.metadata
+    Using cached MarkupSafe-3.0.2-cp310-cp310-win_amd64.whl.metadata (4.1 kB)
+  Using cached setuptools-80.9.0-py3-none-any.whl (1.2 MB)
+  Using cached torch-2.7.1-cp310-cp310-win_amd64.whl (216.1 MB)
+  Using cached wheel-0.45.1-py3-none-any.whl (72 kB)
+  Using cached sympy-1.14.0-py3-none-any.whl (6.3 MB)
+  Using cached mpmath-1.3.0-py3-none-any.whl (536 kB)
+  Using cached typing_extensions-4.14.1-py3-none-any.whl (43 kB)
+  Using cached filelock-3.18.0-py3-none-any.whl (16 kB)
+  Using cached fsspec-2025.5.1-py3-none-any.whl (199 kB)
+  Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+  Using cached MarkupSafe-3.0.2-cp310-cp310-win_amd64.whl (15 kB)
+  Using cached networkx-3.4.2-py3-none-any.whl (1.7 MB)
+  Installing collected packages: mpmath, wheel, typing-extensions, sympy, setuptools, networkx, MarkupSafe, fsspec, filelock, jinja2, torch
+    Creating C:\Users\XIY144\AppData\Local\Temp\pip-build-env-p6o924b9\overlay\Scripts
+
+  ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+  torchaudio 2.5.1+cu121 requires torch==2.5.1+cu121, but you have torch 2.7.1 which is incompatible.
+  torchvision 0.20.1+cu121 requires torch==2.5.1+cu121, but you have torch 2.7.1 which is incompatible.
+  Successfully installed MarkupSafe-3.0.2 filelock-3.18.0 fsspec-2025.5.1 jinja2-3.1.6 mpmath-1.3.0 networkx-3.4.2 setuptools-80.9.0 sympy-1.14.0 torch-2.7.1 typing-extensions-4.14.1 wheel-0.45.1
+  Installing build dependencies ... done
+  Running command Checking if build backend supports build_editable
+  Checking if build backend supports build_editable ... done
+  Running command Getting requirements to build editable
+  C:\Users\XIY144\AppData\Local\Temp\pip-build-env-p6o924b9\overlay\Lib\site-packages\torch\_subclasses\functional_tensor.py:276: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\torch\csrc\utils\tensor_numpy.cpp:81.)
+    cpu = _conversion_method_template(device=torch.device("cpu"))
+  Building wheel groundingdino-0.1.0
+  Compiling without CUDA
+  running egg_info
+  writing groundingdino.egg-info\PKG-INFO
+  writing dependency_links to groundingdino.egg-info\dependency_links.txt
+  writing requirements to groundingdino.egg-info\requires.txt
+  writing top-level names to groundingdino.egg-info\top_level.txt
+  reading manifest file 'groundingdino.egg-info\SOURCES.txt'
+  adding license file 'LICENSE'
+  writing manifest file 'groundingdino.egg-info\SOURCES.txt'
+  Getting requirements to build editable ... done
+  Running command Preparing editable metadata (pyproject.toml)
+  C:\Users\XIY144\AppData\Local\Temp\pip-build-env-p6o924b9\overlay\Lib\site-packages\torch\_subclasses\functional_tensor.py:276: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\torch\csrc\utils\tensor_numpy.cpp:81.)
+    cpu = _conversion_method_template(device=torch.device("cpu"))
+  Building wheel groundingdino-0.1.0
+  Compiling without CUDA
+  running dist_info
+  creating C:\Users\XIY144\AppData\Local\Temp\pip-modern-metadata-vqfkij8e\groundingdino.egg-info
+  writing C:\Users\XIY144\AppData\Local\Temp\pip-modern-metadata-vqfkij8e\groundingdino.egg-info\PKG-INFO
+  writing dependency_links to C:\Users\XIY144\AppData\Local\Temp\pip-modern-metadata-vqfkij8e\groundingdino.egg-info\dependency_links.txt
+  writing requirements to C:\Users\XIY144\AppData\Local\Temp\pip-modern-metadata-vqfkij8e\groundingdino.egg-info\requires.txt
+  writing top-level names to C:\Users\XIY144\AppData\Local\Temp\pip-modern-metadata-vqfkij8e\groundingdino.egg-info\top_level.txt
+  writing manifest file 'C:\Users\XIY144\AppData\Local\Temp\pip-modern-metadata-vqfkij8e\groundingdino.egg-info\SOURCES.txt'
+  reading manifest file 'C:\Users\XIY144\AppData\Local\Temp\pip-modern-metadata-vqfkij8e\groundingdino.egg-info\SOURCES.txt'
+  adding license file 'LICENSE'
+  writing manifest file 'C:\Users\XIY144\AppData\Local\Temp\pip-modern-metadata-vqfkij8e\groundingdino.egg-info\SOURCES.txt'
+  creating 'C:\Users\XIY144\AppData\Local\Temp\pip-modern-metadata-vqfkij8e\groundingdino-0.1.0.dist-info'
+  Preparing editable metadata (pyproject.toml) ... done
+Requirement already satisfied: transformers in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from groundingdino==0.1.0) (4.53.1)
+Requirement already satisfied: addict in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from groundingdino==0.1.0) (2.4.0)
+Requirement already satisfied: yapf in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from groundingdino==0.1.0) (0.43.0)
+Requirement already satisfied: timm in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from groundingdino==0.1.0) (1.0.16)
+Requirement already satisfied: opencv-python in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from groundingdino==0.1.0) (4.12.0.88)
+Requirement already satisfied: supervision in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from groundingdino==0.1.0) (0.25.1)
+Requirement already satisfied: pycocotools in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from groundingdino==0.1.0) (2.0.10)
+Requirement already satisfied: numpy<2.3.0,>=2 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from opencv-python->groundingdino==0.1.0) (2.2.6)
+Requirement already satisfied: contourpy>=1.0.7 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from supervision->groundingdino==0.1.0) (1.3.2)
+Requirement already satisfied: defusedxml<0.8.0,>=0.7.1 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from supervision->groundingdino==0.1.0) (0.7.1)
+Requirement already satisfied: matplotlib>=3.6.0 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from supervision->groundingdino==0.1.0) (3.10.3)
+Requirement already satisfied: pillow>=9.4 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from supervision->groundingdino==0.1.0) (11.0.0)
+Requirement already satisfied: pyyaml>=5.3 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from supervision->groundingdino==0.1.0) (6.0.2)
+Requirement already satisfied: requests>=2.26.0 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from supervision->groundingdino==0.1.0) (2.32.4)
+Requirement already satisfied: scipy<2.0.0,>=1.10.0 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from supervision->groundingdino==0.1.0) (1.15.3)
+Requirement already satisfied: tqdm>=4.62.3 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from supervision->groundingdino==0.1.0) (4.67.1)
+Requirement already satisfied: cycler>=0.10 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from matplotlib>=3.6.0->supervision->groundingdino==0.1.0) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from matplotlib>=3.6.0->supervision->groundingdino==0.1.0) (4.58.5)
+Requirement already satisfied: kiwisolver>=1.3.1 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from matplotlib>=3.6.0->supervision->groundingdino==0.1.0) (1.4.8)
+Requirement already satisfied: packaging>=20.0 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from matplotlib>=3.6.0->supervision->groundingdino==0.1.0) (25.0)
+Requirement already satisfied: pyparsing>=2.3.1 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from matplotlib>=3.6.0->supervision->groundingdino==0.1.0) (3.2.3)
+Requirement already satisfied: python-dateutil>=2.7 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from matplotlib>=3.6.0->supervision->groundingdino==0.1.0) (2.9.0.post0)
+Requirement already satisfied: six>=1.5 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from python-dateutil>=2.7->matplotlib>=3.6.0->supervision->groundingdino==0.1.0) (1.17.0)
+Requirement already satisfied: charset_normalizer<4,>=2 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from requests>=2.26.0->supervision->groundingdino==0.1.0) (3.4.2)
+Requirement already satisfied: idna<4,>=2.5 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from requests>=2.26.0->supervision->groundingdino==0.1.0) (3.10)
+Requirement already satisfied: urllib3<3,>=1.21.1 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from requests>=2.26.0->supervision->groundingdino==0.1.0) (2.5.0)
+Requirement already satisfied: certifi>=2017.4.17 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from requests>=2.26.0->supervision->groundingdino==0.1.0) (2025.6.15)
+Requirement already satisfied: colorama in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from tqdm>=4.62.3->supervision->groundingdino==0.1.0) (0.4.6)
+Requirement already satisfied: torch in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from timm->groundingdino==0.1.0) (2.5.1+cu121)
+Requirement already satisfied: torchvision in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from timm->groundingdino==0.1.0) (0.20.1+cu121)
+Requirement already satisfied: huggingface_hub in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from timm->groundingdino==0.1.0) (0.33.2)
+Requirement already satisfied: safetensors in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from timm->groundingdino==0.1.0) (0.5.3)
+Requirement already satisfied: filelock in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from huggingface_hub->timm->groundingdino==0.1.0) (3.13.1)
+Requirement already satisfied: fsspec>=2023.5.0 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from huggingface_hub->timm->groundingdino==0.1.0) (2024.6.1)
+Requirement already satisfied: typing-extensions>=3.7.4.3 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from huggingface_hub->timm->groundingdino==0.1.0) (4.12.2)
+Requirement already satisfied: networkx in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from torch->timm->groundingdino==0.1.0) (3.3)
+Requirement already satisfied: jinja2 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from torch->timm->groundingdino==0.1.0) (3.1.4)
+Requirement already satisfied: sympy==1.13.1 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from torch->timm->groundingdino==0.1.0) (1.13.1)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from sympy==1.13.1->torch->timm->groundingdino==0.1.0) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from jinja2->torch->timm->groundingdino==0.1.0) (2.1.5)
+Requirement already satisfied: regex!=2019.12.17 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from transformers->groundingdino==0.1.0) (2024.11.6)
+Requirement already satisfied: tokenizers<0.22,>=0.21 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from transformers->groundingdino==0.1.0) (0.21.2)
+Requirement already satisfied: platformdirs>=3.5.1 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from yapf->groundingdino==0.1.0) (4.3.8)
+Requirement already satisfied: tomli>=2.0.1 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from yapf->groundingdino==0.1.0) (2.2.1)
+Building wheels for collected packages: groundingdino
+  Running command Building editable for groundingdino (pyproject.toml)
+  C:\Users\XIY144\AppData\Local\Temp\pip-build-env-p6o924b9\overlay\Lib\site-packages\torch\_subclasses\functional_tensor.py:276: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\torch\csrc\utils\tensor_numpy.cpp:81.)
+    cpu = _conversion_method_template(device=torch.device("cpu"))
+  Building wheel groundingdino-0.1.0
+  Compiling without CUDA
+  running editable_wheel
+  creating C:\Users\XIY144\AppData\Local\Temp\pip-wheel-7gwqo6gj\.tmp-ml_6gqd6\groundingdino.egg-info
+  writing C:\Users\XIY144\AppData\Local\Temp\pip-wheel-7gwqo6gj\.tmp-ml_6gqd6\groundingdino.egg-info\PKG-INFO
+  writing dependency_links to C:\Users\XIY144\AppData\Local\Temp\pip-wheel-7gwqo6gj\.tmp-ml_6gqd6\groundingdino.egg-info\dependency_links.txt
+  writing requirements to C:\Users\XIY144\AppData\Local\Temp\pip-wheel-7gwqo6gj\.tmp-ml_6gqd6\groundingdino.egg-info\requires.txt
+  writing top-level names to C:\Users\XIY144\AppData\Local\Temp\pip-wheel-7gwqo6gj\.tmp-ml_6gqd6\groundingdino.egg-info\top_level.txt
+  writing manifest file 'C:\Users\XIY144\AppData\Local\Temp\pip-wheel-7gwqo6gj\.tmp-ml_6gqd6\groundingdino.egg-info\SOURCES.txt'
+  reading manifest file 'C:\Users\XIY144\AppData\Local\Temp\pip-wheel-7gwqo6gj\.tmp-ml_6gqd6\groundingdino.egg-info\SOURCES.txt'
+  adding license file 'LICENSE'
+  writing manifest file 'C:\Users\XIY144\AppData\Local\Temp\pip-wheel-7gwqo6gj\.tmp-ml_6gqd6\groundingdino.egg-info\SOURCES.txt'
+  creating 'C:\Users\XIY144\AppData\Local\Temp\pip-wheel-7gwqo6gj\.tmp-ml_6gqd6\groundingdino-0.1.0.dist-info'
+  creating C:\Users\XIY144\AppData\Local\Temp\pip-wheel-7gwqo6gj\.tmp-ml_6gqd6\groundingdino-0.1.0.dist-info\WHEEL
+  running build_py
+  Editable install will be performed using a meta path finder.
+
+  Options like `package-data`, `include/exclude-package-data` or
+  `packages.find.exclude/include` may have no effect.
+
+  adding '__editable___groundingdino_0_1_0_finder.py'
+  adding '__editable__.groundingdino-0.1.0.pth'
+  creating 'C:\Users\XIY144\AppData\Local\Temp\pip-wheel-7gwqo6gj\.tmp-ml_6gqd6\groundingdino-0.1.0-0.editable-py3-none-any.whl' and adding 'C:\Users\XIY144\AppData\Local\Temp\tmp0fbmq2l0groundingdino-0.1.0-0.editable-py3-none-any.whl' to it
+  adding 'groundingdino-0.1.0.dist-info/licenses/LICENSE'
+  adding 'groundingdino-0.1.0.dist-info/METADATA'
+  adding 'groundingdino-0.1.0.dist-info/WHEEL'
+  adding 'groundingdino-0.1.0.dist-info/top_level.txt'
+  adding 'groundingdino-0.1.0.dist-info/RECORD'
+  C:\Users\XIY144\AppData\Local\Temp\pip-build-env-p6o924b9\overlay\Lib\site-packages\setuptools\command\editable_wheel.py:351: InformationOnly: Editable installation.
+  !!
+
+          ********************************************************************************
+          Please be careful with folders in your working directory with the same
+          name as your package as they may take precedence during imports.
+          ********************************************************************************
+
+  !!
+    with strategy, WheelFile(wheel_path, "w") as wheel_obj:
+  Building editable for groundingdino (pyproject.toml) ... done
+  Created wheel for groundingdino: filename=groundingdino-0.1.0-0.editable-py3-none-any.whl size=11183 sha256=3ad3c351c2636db1fa555c4e3abf4469461aa5c5457c7d7bf3b33a2a1f40ebb0
+  Stored in directory: C:\Users\XIY144\AppData\Local\Temp\pip-ephem-wheel-cache-xv28cpq1\wheels\40\d1\98\b8c53f9a1da486afa9d43c1fd5d130f55a518a56e3f03036da
+Successfully built groundingdino
+Installing collected packages: groundingdino
+  Attempting uninstall: groundingdino
+    Found existing installation: groundingdino 0.1.0
+    Uninstalling groundingdino-0.1.0:
+      Removing file or directory c:\users\xiy144\.conda\envs\gdino\lib\site-packages\__editable__.groundingdino-0.1.0.pth
+      Removing file or directory c:\users\xiy144\.conda\envs\gdino\lib\site-packages\__editable___groundingdino_0_1_0_finder.py
+      Removing file or directory c:\users\xiy144\.conda\envs\gdino\lib\site-packages\__pycache__\__editable___groundingdino_0_1_0_finder.cpython-310.pyc
+      Removing file or directory c:\users\xiy144\.conda\envs\gdino\lib\site-packages\groundingdino-0.1.0.dist-info\
+      Successfully uninstalled groundingdino-0.1.0
+Successfully installed groundingdino-0.1.0

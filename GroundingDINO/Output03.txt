@@ -1,0 +1,30 @@
+Microsoft Windows [Version 10.0.26100.4349]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>conda activate gdino
+
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.8.3
+** Copyright (c) 2022 Microsoft Corporation
+**********************************************************************
+[vcvarsall.bat] Environment initialized for: 'x64'
+
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>set CUDA_HOME=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1
+
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>set BUILD_WITH_CUDA=True
+
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>set AM_I_DOCKER=False
+
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>where nvcc
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin\nvcc.exe
+
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>nvcc --version
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2022 NVIDIA Corporation
+Built on Wed_Sep_21_10:41:10_Pacific_Daylight_Time_2022
+Cuda compilation tools, release 11.8, V11.8.89
+Build cuda_11.8.r11.8/compiler.31833905_0
+
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>python -c "import torch; print(torch.__version__, torch.version.cuda)"
+2.5.1+cu121 12.1

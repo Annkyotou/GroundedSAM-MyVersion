@@ -1,0 +1,153 @@
+(gdino) PS C:\Users\XIY144> & C:/Users/XIY144/.conda/envs/gdino/python.exe c:/Users/XIY144/Grounded-Segment-Anything/MyTest.py
+FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+Traceback (most recent call last):
+  File "c:\Users\XIY144\Grounded-Segment-Anything\MyTest.py", line 4, in <module>
+    model = load_model("GroundingDINO/groundingdino/config/GroundingDINO_SwinT_OGC.py", "./grounded_sam_checkpoints/groundingdino_swint_ogc.pth")
+  File "C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO\groundingdino\util\inference.py", line 30, in load_model
+    args = SLConfig.fromfile(model_config_path)
+  File "C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO\groundingdino\util\slconfig.py", line 185, in fromfile
+    cfg_dict, cfg_text = SLConfig._file2dict(filename)
+  File "C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO\groundingdino\util\slconfig.py", line 79, in _file2dict
+    check_file_exist(filename)
+  File "C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO\groundingdino\util\slconfig.py", line 23, in check_file_exist
+    raise FileNotFoundError(msg_tmpl.format(filename))
+FileNotFoundError: file "C:\Users\XIY144\GroundingDINO\groundingdino\config\GroundingDINO_SwinT_OGC.py" does not exist
+(gdino) PS C:\Users\XIY144> cd C:\Users\XIY144\Grounded-Segment-Anything
+(gdino) PS C:\Users\XIY144\Grounded-Segment-Anything> where python
+(gdino) PS C:\Users\XIY144\Grounded-Segment-Anything> python -c "import sys; print(sys.version)"
+3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:42:04) [MSC v.1943 64 bit (AMD64)]
+(gdino) PS C:\Users\XIY144\Grounded-Segment-Anything> python -c "import torch; print(torch.__version__, torch.version.cuda, torch.cuda.is_available())"
+>>
+2.5.1+cu121 12.1 True
+(gdino) PS C:\Users\XIY144\Grounded-Segment-Anything> $Env:PATH -split ";"
+C:\Users\XIY144\.conda\envs\gdino
+C:\Users\XIY144\.conda\envs\gdino\Library\mingw-w64\bin
+C:\Users\XIY144\.conda\envs\gdino\Library\usr\bin
+C:\Users\XIY144\.conda\envs\gdino\Library\bin
+C:\Users\XIY144\.conda\envs\gdino\Scripts
+C:\Users\XIY144\.conda\envs\gdino\bin
+C:\ProgramData\anaconda3\condabin
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\libnvvp
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\libnvvp
+C:\Program Files\Python312\Scripts
+C:\Program Files\Python312
+C:\Windows\system32
+C:\Windows
+C:\Windows\System32\Wbem
+C:\Windows\System32\WindowsPowerShell\v1.0
+C:\Windows\System32\OpenSSH
+C:\Program Files\dotnet
+C:\Program Files\MATLAB\R2024a\bin
+C:\Program Files\Zero Install
+C:\Program Files\Common Files\Autodesk Shared
+C:\Program Files\Microsoft SQL Server\150\Tools\Binn
+C:\Program Files\Git\cmd
+C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common
+C:\Program Files\NVIDIA Corporation\Nsight Compute 2023.1.1
+C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit
+C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR
+C:\Users\XIY144\AppData\Local\Microsoft\WindowsApps
+C:\ProgramData\anaconda3\Library\bin
+C:\ProgramData\anaconda3\Scripts
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1
+C:\ProgramData\anaconda3
+C:\Users\XIY144\AppData\Local\Programs\Microsoft VS Code\bin
+C:\Users\XIY144\ffmpeg\bin
+C:\Users\XIY144\COLMAP-3.8-windows-cuda
+C:\Users\XIY144\AppData\Roaming\Python\Python312\Scripts
+.
+C:\ProgramData\anaconda3
+C:\ProgramData\anaconda3\Library\mingw-w64\bin
+C:\ProgramData\anaconda3\Library\usr\bin
+C:\ProgramData\anaconda3\Library\bin
+C:\ProgramData\anaconda3\Scripts
+C:\ProgramData\anaconda3\bin
+C:\ProgramData\anaconda3\condabin
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\libnvvp
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\libnvvp
+C:\Program Files\Python312\Scripts
+C:\Program Files\Python312
+C:\Windows\system32
+C:\Windows
+C:\Windows\System32\Wbem
+C:\Windows\System32\WindowsPowerShell\v1.0
+C:\Windows\System32\OpenSSH
+C:\Program Files\dotnet
+C:\Program Files\MATLAB\R2024a\bin
+C:\Program Files\Zero Install
+C:\Program Files\Common Files\Autodesk Shared
+C:\Program Files\Microsoft SQL Server\150\Tools\Binn
+C:\Program Files\Git\cmd
+C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common
+C:\Program Files\NVIDIA Corporation\Nsight Compute 2023.1.1
+C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit
+C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR
+C:\Users\XIY144\AppData\Local\Microsoft\WindowsApps
+C:\ProgramData\anaconda3\Library\bin
+C:\ProgramData\anaconda3\Scripts
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1
+C:\ProgramData\anaconda3
+C:\Users\XIY144\AppData\Local\Programs\Microsoft VS Code\bin
+C:\Users\XIY144\ffmpeg\bin
+C:\Users\XIY144\COLMAP-3.8-windows-cuda
+C:\Users\XIY144\AppData\Roaming\Python\Python312\Scripts
+.
+C:\ProgramData\anaconda3
+C:\ProgramData\anaconda3\Library\mingw-w64\bin
+C:\ProgramData\anaconda3\Library\usr\bin
+C:\ProgramData\anaconda3\Library\bin
+C:\ProgramData\anaconda3\Scripts
+C:\ProgramData\anaconda3\bin
+C:\ProgramData\anaconda3\condabin
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\libnvvp
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\libnvvp
+C:\Program Files\Python312\Scripts
+C:\Program Files\Python312
+C:\Windows\system32
+C:\Windows
+C:\Windows\System32\Wbem
+C:\Windows\System32\WindowsPowerShell\v1.0
+C:\Windows\System32\OpenSSH
+C:\Program Files\dotnet
+C:\Program Files\MATLAB\R2024a\bin
+C:\Program Files\Zero Install
+C:\Program Files\Common Files\Autodesk Shared
+C:\Program Files\Microsoft SQL Server\150\Tools\Binn
+C:\Program Files\Git\cmd
+C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common
+C:\Program Files\NVIDIA Corporation\Nsight Compute 2023.1.1
+C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit
+C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR
+C:\Users\XIY144\AppData\Local\Microsoft\WindowsApps
+C:\ProgramData\anaconda3\Library\bin
+C:\ProgramData\anaconda3\Scripts
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1
+C:\ProgramData\anaconda3
+C:\Users\XIY144\AppData\Local\Programs\Microsoft VS Code\bin
+C:\Users\XIY144\ffmpeg\bin
+C:\Users\XIY144\COLMAP-3.8-windows-cuda
+C:\Users\XIY144\AppData\Roaming\Python\Python312\Scripts
+.
+(gdino) PS C:\Users\XIY144\Grounded-Segment-Anything> & C:/Users/XIY144/.conda/envs/gdino/python.exe c:/Users/XIY144/Grounded-Segment-Anything/MyTest.py
+FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\aten\src\ATen\native\TensorShape.cpp:3596.)
+final text_encoder_type: bert-base-uncased
+FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+FutureWarning: The `device` argument is deprecated and will be removed in v5 of Transformers.
+UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+Traceback (most recent call last):
+  File "c:\Users\XIY144\Grounded-Segment-Anything\MyTest.py", line 21, in <module>
+    annotated_frame = annotate(image_source=image_source, boxes=boxes, logits=logits, phrases=phrases)
+  File "C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO\groundingdino\util\inference.py", line 102, in annotate
+    annotated_frame = box_annotator.annotate(scene=annotated_frame, detections=detections, labels=labels)
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\supervision\utils\conversion.py", line 23, in wrapper
+    return annotate_func(self, scene, *args, **kwargs)
+TypeError: BoxAnnotator.annotate() got an unexpected keyword argument 'labels'

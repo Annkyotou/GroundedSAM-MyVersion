@@ -1,0 +1,836 @@
+(base) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>pip install --force-reinstall -v .
+Using pip 25.1.1 from C:\Users\XIY144\AppData\Roaming\Python\Python312\site-packages\pip (python 3.12)
+Defaulting to user installation because normal site-packages is not writeable
+Processing c:\users\xiy144\grounded-segment-anything\groundingdino
+  Running command pip subprocess to install build dependencies
+  Using pip 25.1.1 from C:\Users\XIY144\AppData\Roaming\Python\Python312\site-packages\pip (python 3.12)
+  Collecting setuptools
+    Obtaining dependency information for setuptools from https://files.pythonhosted.org/packages/a3/dc/17031897dae0efacfea57dfd3a82fdd2a2aeb58e0ff71b77b87e44edc772/setuptools-80.9.0-py3-none-any.whl.metadata
+    Using cached setuptools-80.9.0-py3-none-any.whl.metadata (6.6 kB)
+  Collecting torch
+    Obtaining dependency information for torch from https://files.pythonhosted.org/packages/a1/37/a37495502bc7a23bf34f89584fa5a78e25bae7b8da513bc1b8f97afb7009/torch-2.7.1-cp312-cp312-win_amd64.whl.metadata
+    Using cached torch-2.7.1-cp312-cp312-win_amd64.whl.metadata (28 kB)
+  Collecting wheel
+    Obtaining dependency information for wheel from https://files.pythonhosted.org/packages/0b/2c/87f3254fd8ffd29e4c02732eee68a83a1d3c346ae39bc6822dcbcb697f2b/wheel-0.45.1-py3-none-any.whl.metadata
+    Using cached wheel-0.45.1-py3-none-any.whl.metadata (2.3 kB)
+  Collecting filelock (from torch)
+    Obtaining dependency information for filelock from https://files.pythonhosted.org/packages/4d/36/2a115987e2d8c300a974597416d9de88f2444426de9571f4b59b2cca3acc/filelock-3.18.0-py3-none-any.whl.metadata
+    Using cached filelock-3.18.0-py3-none-any.whl.metadata (2.9 kB)
+  Collecting typing-extensions>=4.10.0 (from torch)
+    Obtaining dependency information for typing-extensions>=4.10.0 from https://files.pythonhosted.org/packages/b5/00/d631e67a838026495268c2f6884f3711a15a9a2a96cd244fdaea53b823fb/typing_extensions-4.14.1-py3-none-any.whl.metadata
+    Using cached typing_extensions-4.14.1-py3-none-any.whl.metadata (3.0 kB)
+  Collecting sympy>=1.13.3 (from torch)
+    Obtaining dependency information for sympy>=1.13.3 from https://files.pythonhosted.org/packages/a2/09/77d55d46fd61b4a135c444fc97158ef34a095e5681d0a6c10b75bf356191/sympy-1.14.0-py3-none-any.whl.metadata
+    Using cached sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+  Collecting networkx (from torch)
+    Obtaining dependency information for networkx from https://files.pythonhosted.org/packages/eb/8d/776adee7bbf76365fdd7f2552710282c79a4ead5d2a46408c9043a2b70ba/networkx-3.5-py3-none-any.whl.metadata
+    Using cached networkx-3.5-py3-none-any.whl.metadata (6.3 kB)
+  Collecting jinja2 (from torch)
+    Obtaining dependency information for jinja2 from https://files.pythonhosted.org/packages/62/a1/3d680cbfd5f4b8f15abc1d571870c5fc3e594bb582bc3b64ea099db13e56/jinja2-3.1.6-py3-none-any.whl.metadata
+    Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+  Collecting fsspec (from torch)
+    Obtaining dependency information for fsspec from https://files.pythonhosted.org/packages/bb/61/78c7b3851add1481b048b5fdc29067397a1784e2910592bc81bb3f608635/fsspec-2025.5.1-py3-none-any.whl.metadata
+    Using cached fsspec-2025.5.1-py3-none-any.whl.metadata (11 kB)
+  Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch)
+    Obtaining dependency information for mpmath<1.4,>=1.1.0 from https://files.pythonhosted.org/packages/43/e3/7d92a15f894aa0c9c4b49b8ee9ac9850d6e63b03c9c32c0367a13ae62209/mpmath-1.3.0-py3-none-any.whl.metadata
+    Using cached mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+  Collecting MarkupSafe>=2.0 (from jinja2->torch)
+    Obtaining dependency information for MarkupSafe>=2.0 from https://files.pythonhosted.org/packages/c1/80/a61f99dc3a936413c3ee4e1eecac96c0da5ed07ad56fd975f1a9da5bc630/MarkupSafe-3.0.2-cp312-cp312-win_amd64.whl.metadata
+    Using cached MarkupSafe-3.0.2-cp312-cp312-win_amd64.whl.metadata (4.1 kB)
+  Using cached setuptools-80.9.0-py3-none-any.whl (1.2 MB)
+  Using cached torch-2.7.1-cp312-cp312-win_amd64.whl (216.1 MB)
+  Using cached wheel-0.45.1-py3-none-any.whl (72 kB)
+  Using cached sympy-1.14.0-py3-none-any.whl (6.3 MB)
+  Using cached mpmath-1.3.0-py3-none-any.whl (536 kB)
+  Using cached typing_extensions-4.14.1-py3-none-any.whl (43 kB)
+  Using cached filelock-3.18.0-py3-none-any.whl (16 kB)
+  Using cached fsspec-2025.5.1-py3-none-any.whl (199 kB)
+  Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+  Using cached MarkupSafe-3.0.2-cp312-cp312-win_amd64.whl (15 kB)
+  Using cached networkx-3.5-py3-none-any.whl (2.0 MB)
+  Installing collected packages: mpmath, wheel, typing-extensions, sympy, setuptools, networkx, MarkupSafe, fsspec, filelock, jinja2, torch
+    Creating C:\Users\XIY144\AppData\Local\Temp\pip-build-env-bgnxmhhg\overlay\Scripts
+
+  ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+  torchaudio 2.5.1+cu121 requires torch==2.5.1+cu121, but you have torch 2.7.1 which is incompatible.
+  torchvision 0.20.1+cu121 requires torch==2.5.1+cu121, but you have torch 2.7.1 which is incompatible.
+  s3fs 2024.3.1 requires fsspec==2024.3.1, but you have fsspec 2025.5.1 which is incompatible.
+  streamlit 1.32.0 requires packaging<24,>=16.8, but you have packaging 25.0 which is incompatible.
+  streamlit 1.32.0 requires pillow<11,>=7.1.0, but you have pillow 11.3.0 which is incompatible.
+  streamlit 1.32.0 requires protobuf<5,>=3.20, but you have protobuf 6.31.1 which is incompatible.
+  streamlit 1.32.0 requires rich<14,>=10.14.0, but you have rich 14.0.0 which is incompatible.
+  Successfully installed MarkupSafe-3.0.2 filelock-3.18.0 fsspec-2025.5.1 jinja2-3.1.6 mpmath-1.3.0 networkx-3.5 setuptools-80.9.0 sympy-1.14.0 torch-2.7.1 typing-extensions-4.14.1 wheel-0.45.1
+  Installing build dependencies ... done
+  Running command Getting requirements to build wheel
+  C:\Users\XIY144\AppData\Local\Temp\pip-build-env-bgnxmhhg\overlay\Lib\site-packages\torch\_subclasses\functional_tensor.py:276: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\torch\csrc\utils\tensor_numpy.cpp:81.)
+    cpu = _conversion_method_template(device=torch.device("cpu"))
+  Building wheel groundingdino-0.1.0
+  Compiling without CUDA
+  running egg_info
+  writing groundingdino.egg-info\PKG-INFO
+  writing dependency_links to groundingdino.egg-info\dependency_links.txt
+  writing requirements to groundingdino.egg-info\requires.txt
+  writing top-level names to groundingdino.egg-info\top_level.txt
+  reading manifest file 'groundingdino.egg-info\SOURCES.txt'
+  adding license file 'LICENSE'
+  writing manifest file 'groundingdino.egg-info\SOURCES.txt'
+  Getting requirements to build wheel ... done
+  Running command Preparing metadata (pyproject.toml)
+  C:\Users\XIY144\AppData\Local\Temp\pip-build-env-bgnxmhhg\overlay\Lib\site-packages\torch\_subclasses\functional_tensor.py:276: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\torch\csrc\utils\tensor_numpy.cpp:81.)
+    cpu = _conversion_method_template(device=torch.device("cpu"))
+  Building wheel groundingdino-0.1.0
+  Compiling without CUDA
+  running dist_info
+  creating C:\Users\XIY144\AppData\Local\Temp\pip-modern-metadata-7za23s_r\groundingdino.egg-info
+  writing C:\Users\XIY144\AppData\Local\Temp\pip-modern-metadata-7za23s_r\groundingdino.egg-info\PKG-INFO
+  writing dependency_links to C:\Users\XIY144\AppData\Local\Temp\pip-modern-metadata-7za23s_r\groundingdino.egg-info\dependency_links.txt
+  writing requirements to C:\Users\XIY144\AppData\Local\Temp\pip-modern-metadata-7za23s_r\groundingdino.egg-info\requires.txt
+  writing top-level names to C:\Users\XIY144\AppData\Local\Temp\pip-modern-metadata-7za23s_r\groundingdino.egg-info\top_level.txt
+  writing manifest file 'C:\Users\XIY144\AppData\Local\Temp\pip-modern-metadata-7za23s_r\groundingdino.egg-info\SOURCES.txt'
+  reading manifest file 'C:\Users\XIY144\AppData\Local\Temp\pip-modern-metadata-7za23s_r\groundingdino.egg-info\SOURCES.txt'
+  adding license file 'LICENSE'
+  writing manifest file 'C:\Users\XIY144\AppData\Local\Temp\pip-modern-metadata-7za23s_r\groundingdino.egg-info\SOURCES.txt'
+  creating 'C:\Users\XIY144\AppData\Local\Temp\pip-modern-metadata-7za23s_r\groundingdino-0.1.0.dist-info'
+  Preparing metadata (pyproject.toml) ... done
+Collecting transformers (from groundingdino==0.1.0)
+  Obtaining dependency information for transformers from https://files.pythonhosted.org/packages/8d/10/8cef2288810a3210659eb3a20711e8387cc35a881a7762ae387806e2d651/transformers-4.53.1-py3-none-any.whl.metadata
+  Using cached transformers-4.53.1-py3-none-any.whl.metadata (40 kB)
+Collecting addict (from groundingdino==0.1.0)
+  Obtaining dependency information for addict from https://files.pythonhosted.org/packages/6a/00/b08f23b7d7e1e14ce01419a467b583edbb93c6cdb8654e54a9cc579cd61f/addict-2.4.0-py3-none-any.whl.metadata
+  Using cached addict-2.4.0-py3-none-any.whl.metadata (1.0 kB)
+Collecting yapf (from groundingdino==0.1.0)
+  Obtaining dependency information for yapf from https://files.pythonhosted.org/packages/37/81/6acd6601f61e31cfb8729d3da6d5df966f80f374b78eff83760714487338/yapf-0.43.0-py3-none-any.whl.metadata
+  Using cached yapf-0.43.0-py3-none-any.whl.metadata (46 kB)
+Collecting timm (from groundingdino==0.1.0)
+  Obtaining dependency information for timm from https://files.pythonhosted.org/packages/3b/14/10d0ea58a7580b8bd7c8d69420b3dc3a1deb890d4ff297deca9717689598/timm-1.0.16-py3-none-any.whl.metadata
+  Using cached timm-1.0.16-py3-none-any.whl.metadata (57 kB)
+Collecting opencv-python (from groundingdino==0.1.0)
+  Obtaining dependency information for opencv-python from https://files.pythonhosted.org/packages/fa/80/eb88edc2e2b11cd2dd2e56f1c80b5784d11d6e6b7f04a1145df64df40065/opencv_python-4.12.0.88-cp37-abi3-win_amd64.whl.metadata
+  Using cached opencv_python-4.12.0.88-cp37-abi3-win_amd64.whl.metadata (19 kB)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/3a/22/401ee57f125dfffabab7151be185777789484fdd894aa149cafbc6104319/supervision-0.12.0-py3-none-any.whl (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/26/47/d9096c72a39593bb2310fe35a714e3b3665c9f91703babf5bbb3e815b78a/supervision-0.12.0.tar.gz (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/4a/5e/33104865bd643d289318d14ff6dd12d41a5fac0219e2cf98c25e64ec5586/supervision-0.13.0rc3-py3-none-any.whl (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/55/85/f798d12a7c8d9e777ae5614632cbf566a054b04fb01ae1fd0fbe436574d4/supervision-0.13.0rc3.tar.gz (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/bc/94/16897da14a079b097b174b9d3d1cf414c24bbf9b70732ca87226c8892f4d/supervision-0.13.0rc4-py3-none-any.whl (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/a9/e3/b1eb58c7f0021dd83f24d0f153bba20c7be54103d3eea0666a0b796f3e9d/supervision-0.13.0rc4.tar.gz (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/ca/e8/4d0e1f866ae4cad3bebdfbd91d1e257a53090e103499a3e77c461e28f1b5/supervision-0.13.0-py3-none-any.whl (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/a6/98/ebfa29bcad23b76a830101dbbb4c967701ff82c6d34849ecfb86ae7382b7/supervision-0.13.0.tar.gz (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/cd/8a/9eaf928ed5bac9a664e74bb6173f12434ab5156dff73b20897fe499f0f06/supervision-0.14.0b1-py3-none-any.whl (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/d0/b7/379fd3d7da0bca9b75647386a1f169256b8156f5b059c35147768af329ed/supervision-0.14.0b1.tar.gz (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/3b/6b/2e70be5ac353d48cb60af934a1afa400d0bebce9c1dce439e82115272ffb/supervision-0.14.0b2-py3-none-any.whl (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/5d/d5/b86607dde5262016c8e29cc0bfbe9040935c58ecbf197c1a577fef0545ce/supervision-0.14.0b2.tar.gz (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/38/31/19d39cde7723206ecc1e054d16c792204a76ab884fefa656ea297b26af9e/supervision-0.14.0-py3-none-any.whl (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/89/bb/163b5ce74fe9ced7351ed4b3aa120f06d6cc2964112f1834aef82f88d633/supervision-0.14.0.tar.gz (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/76/c5/3f9c31b3a84b7979fd3305037f17ca0e84e186838076b1cc399bcad58381/supervision-0.15.0rc1-py3-none-any.whl (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/52/d0/31ec12cd470f67b2ae7de0bef05474f8d9e30fb68ed81314ac5c7da0d87f/supervision-0.15.0rc1.tar.gz (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/24/e0/2fe5520daa3309f20843e3e5f1517c2050b3e9680622a6ac1eff15691617/supervision-0.15.0rc2-py3-none-any.whl (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/f1/8e/6c4337d211f2db56c97be37b19a3c0a06b5c7473136a73dc90b0c862ede3/supervision-0.15.0rc2.tar.gz (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/79/f8/3dd1b7e00a27ca4d0d0f94c9ffffd82d20df14f23e64963e9cb98287d679/supervision-0.15.0rc3-py3-none-any.whl (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/65/97/a1a2e936943ad3e249cd12883e5a1e5399091844d11b97226330860faadc/supervision-0.15.0rc3.tar.gz (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/3e/07/1b60ff71be45f351b86cbb7f0fa35624751374ed2f9b5fd22d07b091c457/supervision-0.15.0rc4-py3-none-any.whl (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/91/a9/e2c53fcaf672b6832d774a322c55398999d24b01b5329989803327965649/supervision-0.15.0rc4.tar.gz (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/51/81/3314df2b9f84c0101ba3980499f2b3d87632e19ceaaeaa922fa7c697fa2c/supervision-0.15.0-py3-none-any.whl (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/b1/f0/9072f1b862562e968a8fb704202654e6f2192f68f2b4caef4cae5e2fb39f/supervision-0.15.0.tar.gz (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/f3/7e/85607b1e966d901de97816869bd5b3b17afeca3cac8dfeaa7a87497cf31f/supervision-0.16.0rc2-py3-none-any.whl (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/9f/3e/6bc7a89511ebde3cd1a124e178e97f4af66e8f0bcbfd055bf8d504223bc8/supervision-0.16.0rc2.tar.gz (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/58/db/f39e1dfec245a0b14759a890edeeb0a318a1192f7f691af2a6dd0448ab81/supervision-0.16.0rc3-py3-none-any.whl (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/bb/c4/580bbd559ba532ceb2d0485ff7c2965a1d40ee1bf041b659a56c296537f6/supervision-0.16.0rc3.tar.gz (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/c0/59/6bc863f530c0ba5da4c565fd40f17b2b333c2ab28b783202937293ae494a/supervision-0.16.0-py3-none-any.whl (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/7b/74/f205c1be895ae8994448c2829757cf4cbd7c7edb573df41f06b13295c19f/supervision-0.16.0.tar.gz (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/0b/d0/9e085cf7a826fd1cb58651c2a3cc13f526e8612532c3aec647bae6636fe5/supervision-0.17.0rc1-py3-none-any.whl (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/ae/07/d24e0d214df7b76338961e66c97b621c4baeeaad54375550821db499f36f/supervision-0.17.0rc1.tar.gz (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/21/3f/a6fc9205d3c0eb112195b243dbd50f263c085cbc776fc554cbcc26e42e1c/supervision-0.17.0rc2-py3-none-any.whl (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/11/1a/6789a56cb689c2234744a136ad2914a55d0db2e8674ad62250777510f802/supervision-0.17.0rc2.tar.gz (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/ef/5c/d656ae1f344e5cec7d4ad509bf59c3bda523b9a5da4b04c8653376ee57ab/supervision-0.17.0rc3-py3-none-any.whl (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/3e/d5/f561c809a1601be944307f34d3bda7b24c5c01cf47e4d600568363a008db/supervision-0.17.0rc3.tar.gz (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/6f/a1/25f8d51a094e1b277f5a55fa1d87a266b2ba9acbf892cf615e6f9ad3bb84/supervision-0.17.0rc4-py3-none-any.whl (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/46/14/fd4f40d7f12483fd7f619bb37a522f38da328ea5e569bb45fdfb1be5c6f1/supervision-0.17.0rc4.tar.gz (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/d8/53/0a6f3c838f56e9090b690725d0461621da6da522d0ba028592db877fdad6/supervision-0.17.0rc5-py3-none-any.whl (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/fe/ff/63f866601ed84e218a9949a93b25b8cac6b75d8db952b68eb1c123c7561f/supervision-0.17.0rc5.tar.gz (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/b3/cd/dc583295296c9f74bd47a490a89fd4986701ae622cfc52a3781314748a96/supervision-0.17.0rc6-py3-none-any.whl (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/3a/7b/78022a579e0c5c727bbaa52717540fd9833164dff528c06ddf01ca0611c8/supervision-0.17.0rc6.tar.gz (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/ae/c5/15ef5ab49ae807fca88641670818b2dbbb5c96236cab8c896aefd0c21158/supervision-0.17.0rc7-py3-none-any.whl (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/04/8b/26e508139ae8a4f19b51392f3cd607520d97c2bdbcb0eb93937487301936/supervision-0.17.0rc7.tar.gz (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/65/14/7fb0a3be3a98acf91a9e20012508a46c26615cf289f7b5f9bccc15da7d7b/supervision-0.17.0rc8-py3-none-any.whl (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/7d/34/e5c9befc8b4e290038c557eb84f5fb34b7c9ec7e6e9b49aebc3257dbb9b9/supervision-0.17.0rc8.tar.gz (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/32/bc/8a49af935c9974c4900cb8411c56ae57ab316825bb2550457341de5f776d/supervision-0.17.0-py3-none-any.whl (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12.0'): https://files.pythonhosted.org/packages/42/e2/204c0dccf67e100cbba287ecc113cd18e04c5dc36257c29a55771e8929ef/supervision-0.17.0.tar.gz (from https://pypi.org/simple/supervision/) (requires-python:>=3.8,<3.12.0)
+Collecting supervision (from groundingdino==0.1.0)
+  Obtaining dependency information for supervision from https://files.pythonhosted.org/packages/c1/24/d3bcad7ece751166ed308c6deb7e7d02a62a7f5a6e01e61ff2787c538fb0/supervision-0.25.1-py3-none-any.whl.metadata
+  Using cached supervision-0.25.1-py3-none-any.whl.metadata (14 kB)
+Collecting pycocotools (from groundingdino==0.1.0)
+  Obtaining dependency information for pycocotools from https://files.pythonhosted.org/packages/e1/31/d87f781759b2ad177dd6d41c5fe0ce154f14fc8b384e9b80cd21a157395b/pycocotools-2.0.10-cp312-abi3-win_amd64.whl.metadata
+  Using cached pycocotools-2.0.10-cp312-abi3-win_amd64.whl.metadata (1.3 kB)
+  Link requires a different Python (3.12.4 not in: '>=3.7,<3.11'): https://files.pythonhosted.org/packages/3a/be/650f9c091ef71cb01d735775d554e068752d3ff63d7943b26316dc401749/numpy-1.21.2.zip (from https://pypi.org/simple/numpy/) (requires-python:>=3.7,<3.11)
+  Link requires a different Python (3.12.4 not in: '>=3.7,<3.11'): https://files.pythonhosted.org/packages/5f/d6/ad58ded26556eaeaa8c971e08b6466f17c4ac4d786cd3d800e26ce59cc01/numpy-1.21.3.zip (from https://pypi.org/simple/numpy/) (requires-python:>=3.7,<3.11)
+  Link requires a different Python (3.12.4 not in: '>=3.7,<3.11'): https://files.pythonhosted.org/packages/fb/48/b0708ebd7718a8933f0d3937513ef8ef2f4f04529f1f66ca86d873043921/numpy-1.21.4.zip (from https://pypi.org/simple/numpy/) (requires-python:>=3.7,<3.11)
+  Link requires a different Python (3.12.4 not in: '>=3.7,<3.11'): https://files.pythonhosted.org/packages/c2/a8/a924a09492bdfee8c2ec3094d0a13f2799800b4fdc9c890738aeeb12c72e/numpy-1.21.5.zip (from https://pypi.org/simple/numpy/) (requires-python:>=3.7,<3.11)
+  Link requires a different Python (3.12.4 not in: '>=3.7,<3.11'): https://files.pythonhosted.org/packages/45/b7/de7b8e67f2232c26af57c205aaad29fe17754f793404f59c8a730c7a191a/numpy-1.21.6.zip (from https://pypi.org/simple/numpy/) (requires-python:>=3.7,<3.11)
+Collecting numpy<2.3.0,>=2 (from opencv-python->groundingdino==0.1.0)
+  Obtaining dependency information for numpy<2.3.0,>=2 from https://files.pythonhosted.org/packages/36/fa/8c9210162ca1b88529ab76b41ba02d433fd54fecaf6feb70ef9f124683f1/numpy-2.2.6-cp312-cp312-win_amd64.whl.metadata
+  Using cached numpy-2.2.6-cp312-cp312-win_amd64.whl.metadata (60 kB)
+Collecting contourpy>=1.0.7 (from supervision->groundingdino==0.1.0)
+  Obtaining dependency information for contourpy>=1.0.7 from https://files.pythonhosted.org/packages/01/c8/fadd0b92ffa7b5eb5949bf340a63a4a496a6930a6c37a7ba0f12acb076d6/contourpy-1.3.2-cp312-cp312-win_amd64.whl.metadata
+  Using cached contourpy-1.3.2-cp312-cp312-win_amd64.whl.metadata (5.5 kB)
+Collecting defusedxml<0.8.0,>=0.7.1 (from supervision->groundingdino==0.1.0)
+  Obtaining dependency information for defusedxml<0.8.0,>=0.7.1 from https://files.pythonhosted.org/packages/07/6c/aa3f2f849e01cb6a001cd8554a88d4c77c5c1a31c95bdf1cf9301e6d9ef4/defusedxml-0.7.1-py2.py3-none-any.whl.metadata
+  Using cached defusedxml-0.7.1-py2.py3-none-any.whl.metadata (32 kB)
+Collecting matplotlib>=3.6.0 (from supervision->groundingdino==0.1.0)
+  Obtaining dependency information for matplotlib>=3.6.0 from https://files.pythonhosted.org/packages/b1/79/0d1c165eac44405a86478082e225fce87874f7198300bbebc55faaf6d28d/matplotlib-3.10.3-cp312-cp312-win_amd64.whl.metadata
+  Using cached matplotlib-3.10.3-cp312-cp312-win_amd64.whl.metadata (11 kB)
+Collecting pillow>=9.4 (from supervision->groundingdino==0.1.0)
+  Obtaining dependency information for pillow>=9.4 from https://files.pythonhosted.org/packages/8c/ce/e7dfc873bdd9828f3b6e5c2bbb74e47a98ec23cc5c74fc4e54462f0d9204/pillow-11.3.0-cp312-cp312-win_amd64.whl.metadata
+  Using cached pillow-11.3.0-cp312-cp312-win_amd64.whl.metadata (9.2 kB)
+Collecting pyyaml>=5.3 (from supervision->groundingdino==0.1.0)
+  Obtaining dependency information for pyyaml>=5.3 from https://files.pythonhosted.org/packages/0c/e8/4f648c598b17c3d06e8753d7d13d57542b30d56e6c2dedf9c331ae56312e/PyYAML-6.0.2-cp312-cp312-win_amd64.whl.metadata
+  Using cached PyYAML-6.0.2-cp312-cp312-win_amd64.whl.metadata (2.1 kB)
+Collecting requests>=2.26.0 (from supervision->groundingdino==0.1.0)
+  Obtaining dependency information for requests>=2.26.0 from https://files.pythonhosted.org/packages/7c/e4/56027c4a6b4ae70ca9de302488c5ca95ad4a39e190093d6c1a8ace08341b/requests-2.32.4-py3-none-any.whl.metadata
+  Using cached requests-2.32.4-py3-none-any.whl.metadata (4.9 kB)
+  Link requires a different Python (3.12.4 not in: '>=3.7,<3.10'): https://files.pythonhosted.org/packages/99/f1/c00d6be56e1a718a3068079e3ec8ce044d7179345280f6a3f5066068af0d/scipy-1.6.2.tar.gz (from https://pypi.org/simple/scipy/) (requires-python:>=3.7,<3.10)
+  Link requires a different Python (3.12.4 not in: '>=3.7,<3.10'): https://files.pythonhosted.org/packages/fe/fd/8704c7b7b34cdac850485e638346025ca57c5a859934b9aa1be5399b33b7/scipy-1.6.3.tar.gz (from https://pypi.org/simple/scipy/) (requires-python:>=3.7,<3.10)
+  Link requires a different Python (3.12.4 not in: '>=3.7,<3.10'): https://files.pythonhosted.org/packages/bb/bb/944f559d554df6c9adf037aa9fc982a9706ee0e96c0d5beac701cb158900/scipy-1.7.0.tar.gz (from https://pypi.org/simple/scipy/) (requires-python:>=3.7,<3.10)
+  Link requires a different Python (3.12.4 not in: '>=3.7,<3.10'): https://files.pythonhosted.org/packages/47/33/a24aec22b7be7fdb10ec117a95e1e4099890d8bbc6646902f443fc7719d1/scipy-1.7.1.tar.gz (from https://pypi.org/simple/scipy/) (requires-python:>=3.7,<3.10)
+  Link requires a different Python (3.12.4 not in: '>=3.7,<3.11'): https://files.pythonhosted.org/packages/0e/23/58c4f995475a2a97cb5f4a032aedaf881ad87cd976a7180c55118d105a1d/scipy-1.7.2.tar.gz (from https://pypi.org/simple/scipy/) (requires-python:>=3.7,<3.11)
+  Link requires a different Python (3.12.4 not in: '>=3.7,<3.11'): https://files.pythonhosted.org/packages/61/67/1a654b96309c991762ee9bc39c363fc618076b155fe52d295211cf2536c7/scipy-1.7.3.tar.gz (from https://pypi.org/simple/scipy/) (requires-python:>=3.7,<3.11)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.11'): https://files.pythonhosted.org/packages/c0/ad/e3c052ed4e0027a8abef0a5e8441a044427d252d17d9aee06d56e62fc698/scipy-1.8.0rc1.tar.gz (from https://pypi.org/simple/scipy/) (requires-python:>=3.8,<3.11)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.11'): https://files.pythonhosted.org/packages/29/d2/151a54944b333e465f98804dced31dab1284f3c37b752b9cefa710b64681/scipy-1.8.0rc2.tar.gz (from https://pypi.org/simple/scipy/) (requires-python:>=3.8,<3.11)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.11'): https://files.pythonhosted.org/packages/e4/26/83dd1c6378513a6241d984bda9f08c512b6e35fff13fba3acc1b3c195f02/scipy-1.8.0rc3.tar.gz (from https://pypi.org/simple/scipy/) (requires-python:>=3.8,<3.11)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.11'): https://files.pythonhosted.org/packages/22/78/056cc43e7737811b6f50886788a940f852773dd9804f5365952805db9648/scipy-1.8.0rc4.tar.gz (from https://pypi.org/simple/scipy/) (requires-python:>=3.8,<3.11)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.11'): https://files.pythonhosted.org/packages/b4/a2/4faa34bf0cdbefd5c706625f1234987795f368eb4e97bde9d6f46860843e/scipy-1.8.0.tar.gz (from https://pypi.org/simple/scipy/) (requires-python:>=3.8,<3.11)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.11'): https://files.pythonhosted.org/packages/26/b5/9330f004b9a3b2b6a31f59f46f1617ce9ca15c0e7fe64288c20385a05c9d/scipy-1.8.1.tar.gz (from https://pypi.org/simple/scipy/) (requires-python:>=3.8,<3.11)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12'): https://files.pythonhosted.org/packages/87/82/8b9bf8bb8030f1eef281ad2af87cc648e06e4a4974c2b9201a57d991b12c/scipy-1.9.0rc1.tar.gz (from https://pypi.org/simple/scipy/) (requires-python:>=3.8,<3.12)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12'): https://files.pythonhosted.org/packages/5a/87/27f9ee75c32138d6eaabff2b91744c97a3fdbbbdd78948372dac93e0079f/scipy-1.9.0rc2.tar.gz (from https://pypi.org/simple/scipy/) (requires-python:>=3.8,<3.12)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12'): https://files.pythonhosted.org/packages/57/72/484c38e5b814b48b41ac6432ef69077f2e7c8094925d3ce17bc3d61359b0/scipy-1.9.0rc3.tar.gz (from https://pypi.org/simple/scipy/) (requires-python:>=3.8,<3.12)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12'): https://files.pythonhosted.org/packages/a8/e3/4ec401f609d34162b7023a09165da491630879e4cfa2336667fe2102cd06/scipy-1.9.0.tar.gz (from https://pypi.org/simple/scipy/) (requires-python:>=3.8,<3.12)
+  Link requires a different Python (3.12.4 not in: '>=3.8,<3.12'): https://files.pythonhosted.org/packages/db/af/16906139f52bc6866c43401869ce247662739ad71afa11c6f18505eb0546/scipy-1.9.1.tar.gz (from https://pypi.org/simple/scipy/) (requires-python:>=3.8,<3.12)
+  Link requires a different Python (3.12.4 not in: '<3.12,>=3.8'): https://files.pythonhosted.org/packages/a2/ce/2592c3b550cf8f68879d4ff2159f3c689ee6f032f8fc9059022074f7bd75/scipy-1.10.0rc1.tar.gz (from https://pypi.org/simple/scipy/) (requires-python:<3.12,>=3.8)
+  Link requires a different Python (3.12.4 not in: '<3.12,>=3.8'): https://files.pythonhosted.org/packages/6b/a3/7de758a32569e06877a6b298bdf7b529ce97a33c55deb2b1637b0162fd9d/scipy-1.10.0rc2.tar.gz (from https://pypi.org/simple/scipy/) (requires-python:<3.12,>=3.8)
+  Link requires a different Python (3.12.4 not in: '<3.12,>=3.8'): https://files.pythonhosted.org/packages/d6/bd/2d13a273d95f7b7d9903c906c486040b0aebb85e008f93a5dd0891f21f1f/scipy-1.10.0.tar.gz (from https://pypi.org/simple/scipy/) (requires-python:<3.12,>=3.8)
+  Link requires a different Python (3.12.4 not in: '<3.12,>=3.8'): https://files.pythonhosted.org/packages/84/a9/2bf119f3f9cff1f376f924e39cfae18dec92a1514784046d185731301281/scipy-1.10.1.tar.gz (from https://pypi.org/simple/scipy/) (requires-python:<3.12,>=3.8)
+Collecting scipy<2.0.0,>=1.10.0 (from supervision->groundingdino==0.1.0)
+  Obtaining dependency information for scipy<2.0.0,>=1.10.0 from https://files.pythonhosted.org/packages/ea/b5/29fece1a74c6a94247f8a6fb93f5b28b533338e9c34fdcc9cfe7a939a767/scipy-1.16.0-cp312-cp312-win_amd64.whl.metadata
+  Using cached scipy-1.16.0-cp312-cp312-win_amd64.whl.metadata (60 kB)
+Collecting tqdm>=4.62.3 (from supervision->groundingdino==0.1.0)
+  Obtaining dependency information for tqdm>=4.62.3 from https://files.pythonhosted.org/packages/d0/30/dc54f88dd4a2b5dc8a0279bdd7270e735851848b762aeb1c1184ed1f6b14/tqdm-4.67.1-py3-none-any.whl.metadata
+  Using cached tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)
+Collecting cycler>=0.10 (from matplotlib>=3.6.0->supervision->groundingdino==0.1.0)
+  Obtaining dependency information for cycler>=0.10 from https://files.pythonhosted.org/packages/e7/05/c19819d5e3d95294a6f5947fb9b9629efb316b96de511b418c53d245aae6/cycler-0.12.1-py3-none-any.whl.metadata
+  Using cached cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools>=4.22.0 (from matplotlib>=3.6.0->supervision->groundingdino==0.1.0)
+  Obtaining dependency information for fonttools>=4.22.0 from https://files.pythonhosted.org/packages/0e/4d/1eaaad22781d55f49d1b184563842172aeb6a4fe53c029e503be81114314/fonttools-4.58.5-cp312-cp312-win_amd64.whl.metadata
+  Using cached fonttools-4.58.5-cp312-cp312-win_amd64.whl.metadata (109 kB)
+Collecting kiwisolver>=1.3.1 (from matplotlib>=3.6.0->supervision->groundingdino==0.1.0)
+  Obtaining dependency information for kiwisolver>=1.3.1 from https://files.pythonhosted.org/packages/bd/72/dfff0cc97f2a0776e1c9eb5bef1ddfd45f46246c6533b0191887a427bca5/kiwisolver-1.4.8-cp312-cp312-win_amd64.whl.metadata
+  Using cached kiwisolver-1.4.8-cp312-cp312-win_amd64.whl.metadata (6.3 kB)
+Collecting packaging>=20.0 (from matplotlib>=3.6.0->supervision->groundingdino==0.1.0)
+  Obtaining dependency information for packaging>=20.0 from https://files.pythonhosted.org/packages/20/12/38679034af332785aac8774540895e234f4d07f7545804097de4b666afd8/packaging-25.0-py3-none-any.whl.metadata
+  Using cached packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting pyparsing>=2.3.1 (from matplotlib>=3.6.0->supervision->groundingdino==0.1.0)
+  Obtaining dependency information for pyparsing>=2.3.1 from https://files.pythonhosted.org/packages/05/e7/df2285f3d08fee213f2d041540fa4fc9ca6c2d44cf36d3a035bf2a8d2bcc/pyparsing-3.2.3-py3-none-any.whl.metadata
+  Using cached pyparsing-3.2.3-py3-none-any.whl.metadata (5.0 kB)
+Collecting python-dateutil>=2.7 (from matplotlib>=3.6.0->supervision->groundingdino==0.1.0)
+  Obtaining dependency information for python-dateutil>=2.7 from https://files.pythonhosted.org/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata
+  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting six>=1.5 (from python-dateutil>=2.7->matplotlib>=3.6.0->supervision->groundingdino==0.1.0)
+  Obtaining dependency information for six>=1.5 from https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl.metadata
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting charset_normalizer<4,>=2 (from requests>=2.26.0->supervision->groundingdino==0.1.0)
+  Obtaining dependency information for charset_normalizer<4,>=2 from https://files.pythonhosted.org/packages/6c/4f/c02d5c493967af3eda9c771ad4d2bbc8df6f99ddbeb37ceea6e8716a32bc/charset_normalizer-3.4.2-cp312-cp312-win_amd64.whl.metadata
+  Using cached charset_normalizer-3.4.2-cp312-cp312-win_amd64.whl.metadata (36 kB)
+Collecting idna<4,>=2.5 (from requests>=2.26.0->supervision->groundingdino==0.1.0)
+  Obtaining dependency information for idna<4,>=2.5 from https://files.pythonhosted.org/packages/76/c6/c88e154df9c4e1a2a66ccf0005a88dfb2650c1dffb6f5ce603dfbd452ce3/idna-3.10-py3-none-any.whl.metadata
+  Using cached idna-3.10-py3-none-any.whl.metadata (10 kB)
+Collecting urllib3<3,>=1.21.1 (from requests>=2.26.0->supervision->groundingdino==0.1.0)
+  Obtaining dependency information for urllib3<3,>=1.21.1 from https://files.pythonhosted.org/packages/a7/c2/fe1e52489ae3122415c51f387e221dd0773709bad6c6cdaa599e8a2c5185/urllib3-2.5.0-py3-none-any.whl.metadata
+  Using cached urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting certifi>=2017.4.17 (from requests>=2.26.0->supervision->groundingdino==0.1.0)
+  Obtaining dependency information for certifi>=2017.4.17 from https://files.pythonhosted.org/packages/84/ae/320161bd181fc06471eed047ecce67b693fd7515b16d495d8932db763426/certifi-2025.6.15-py3-none-any.whl.metadata
+  Using cached certifi-2025.6.15-py3-none-any.whl.metadata (2.4 kB)
+Collecting colorama (from tqdm>=4.62.3->supervision->groundingdino==0.1.0)
+  Obtaining dependency information for colorama from https://files.pythonhosted.org/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl.metadata
+  Using cached colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+Collecting torch (from timm->groundingdino==0.1.0)
+  Obtaining dependency information for torch from https://files.pythonhosted.org/packages/a1/37/a37495502bc7a23bf34f89584fa5a78e25bae7b8da513bc1b8f97afb7009/torch-2.7.1-cp312-cp312-win_amd64.whl.metadata
+  Using cached torch-2.7.1-cp312-cp312-win_amd64.whl.metadata (28 kB)
+Collecting torchvision (from timm->groundingdino==0.1.0)
+  Obtaining dependency information for torchvision from https://files.pythonhosted.org/packages/05/17/e45d5cd3627efdb47587a0634179a3533593436219de3f20c743672d2a79/torchvision-0.22.1-cp312-cp312-win_amd64.whl.metadata
+  Using cached torchvision-0.22.1-cp312-cp312-win_amd64.whl.metadata (6.1 kB)
+Collecting huggingface_hub (from timm->groundingdino==0.1.0)
+  Obtaining dependency information for huggingface_hub from https://files.pythonhosted.org/packages/44/f4/5f3f22e762ad1965f01122b42dae5bf0e009286e2dba601ce1d0dba72424/huggingface_hub-0.33.2-py3-none-any.whl.metadata
+  Using cached huggingface_hub-0.33.2-py3-none-any.whl.metadata (14 kB)
+Collecting safetensors (from timm->groundingdino==0.1.0)
+  Obtaining dependency information for safetensors from https://files.pythonhosted.org/packages/69/e2/b011c38e5394c4c18fb5500778a55ec43ad6106126e74723ffaee246f56e/safetensors-0.5.3-cp38-abi3-win_amd64.whl.metadata
+  Using cached safetensors-0.5.3-cp38-abi3-win_amd64.whl.metadata (3.9 kB)
+Collecting filelock (from huggingface_hub->timm->groundingdino==0.1.0)
+  Obtaining dependency information for filelock from https://files.pythonhosted.org/packages/4d/36/2a115987e2d8c300a974597416d9de88f2444426de9571f4b59b2cca3acc/filelock-3.18.0-py3-none-any.whl.metadata
+  Using cached filelock-3.18.0-py3-none-any.whl.metadata (2.9 kB)
+Collecting fsspec>=2023.5.0 (from huggingface_hub->timm->groundingdino==0.1.0)
+  Obtaining dependency information for fsspec>=2023.5.0 from https://files.pythonhosted.org/packages/bb/61/78c7b3851add1481b048b5fdc29067397a1784e2910592bc81bb3f608635/fsspec-2025.5.1-py3-none-any.whl.metadata
+  Using cached fsspec-2025.5.1-py3-none-any.whl.metadata (11 kB)
+Collecting typing-extensions>=3.7.4.3 (from huggingface_hub->timm->groundingdino==0.1.0)
+  Obtaining dependency information for typing-extensions>=3.7.4.3 from https://files.pythonhosted.org/packages/b5/00/d631e67a838026495268c2f6884f3711a15a9a2a96cd244fdaea53b823fb/typing_extensions-4.14.1-py3-none-any.whl.metadata
+  Using cached typing_extensions-4.14.1-py3-none-any.whl.metadata (3.0 kB)
+Collecting sympy>=1.13.3 (from torch->timm->groundingdino==0.1.0)
+  Obtaining dependency information for sympy>=1.13.3 from https://files.pythonhosted.org/packages/a2/09/77d55d46fd61b4a135c444fc97158ef34a095e5681d0a6c10b75bf356191/sympy-1.14.0-py3-none-any.whl.metadata
+  Using cached sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting networkx (from torch->timm->groundingdino==0.1.0)
+  Obtaining dependency information for networkx from https://files.pythonhosted.org/packages/eb/8d/776adee7bbf76365fdd7f2552710282c79a4ead5d2a46408c9043a2b70ba/networkx-3.5-py3-none-any.whl.metadata
+  Using cached networkx-3.5-py3-none-any.whl.metadata (6.3 kB)
+Collecting jinja2 (from torch->timm->groundingdino==0.1.0)
+  Obtaining dependency information for jinja2 from https://files.pythonhosted.org/packages/62/a1/3d680cbfd5f4b8f15abc1d571870c5fc3e594bb582bc3b64ea099db13e56/jinja2-3.1.6-py3-none-any.whl.metadata
+  Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting setuptools (from torch->timm->groundingdino==0.1.0)
+  Obtaining dependency information for setuptools from https://files.pythonhosted.org/packages/a3/dc/17031897dae0efacfea57dfd3a82fdd2a2aeb58e0ff71b77b87e44edc772/setuptools-80.9.0-py3-none-any.whl.metadata
+  Using cached setuptools-80.9.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch->timm->groundingdino==0.1.0)
+  Obtaining dependency information for mpmath<1.4,>=1.1.0 from https://files.pythonhosted.org/packages/43/e3/7d92a15f894aa0c9c4b49b8ee9ac9850d6e63b03c9c32c0367a13ae62209/mpmath-1.3.0-py3-none-any.whl.metadata
+  Using cached mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Collecting MarkupSafe>=2.0 (from jinja2->torch->timm->groundingdino==0.1.0)
+  Obtaining dependency information for MarkupSafe>=2.0 from https://files.pythonhosted.org/packages/c1/80/a61f99dc3a936413c3ee4e1eecac96c0da5ed07ad56fd975f1a9da5bc630/MarkupSafe-3.0.2-cp312-cp312-win_amd64.whl.metadata
+  Using cached MarkupSafe-3.0.2-cp312-cp312-win_amd64.whl.metadata (4.1 kB)
+Collecting regex!=2019.12.17 (from transformers->groundingdino==0.1.0)
+  Obtaining dependency information for regex!=2019.12.17 from https://files.pythonhosted.org/packages/38/ec/ad2d7de49a600cdb8dd78434a1aeffe28b9d6fc42eb36afab4a27ad23384/regex-2024.11.6-cp312-cp312-win_amd64.whl.metadata
+  Using cached regex-2024.11.6-cp312-cp312-win_amd64.whl.metadata (41 kB)
+Collecting tokenizers<0.22,>=0.21 (from transformers->groundingdino==0.1.0)
+  Obtaining dependency information for tokenizers<0.22,>=0.21 from https://files.pythonhosted.org/packages/13/c3/cc2755ee10be859c4338c962a35b9a663788c0c0b50c0bdd8078fb6870cf/tokenizers-0.21.2-cp39-abi3-win_amd64.whl.metadata
+  Using cached tokenizers-0.21.2-cp39-abi3-win_amd64.whl.metadata (6.9 kB)
+Collecting platformdirs>=3.5.1 (from yapf->groundingdino==0.1.0)
+  Obtaining dependency information for platformdirs>=3.5.1 from https://files.pythonhosted.org/packages/fe/39/979e8e21520d4e47a0bbe349e2713c0aac6f3d853d0e5b34d76206c439aa/platformdirs-4.3.8-py3-none-any.whl.metadata
+  Using cached platformdirs-4.3.8-py3-none-any.whl.metadata (12 kB)
+Using cached addict-2.4.0-py3-none-any.whl (3.8 kB)
+Using cached opencv_python-4.12.0.88-cp37-abi3-win_amd64.whl (39.0 MB)
+Using cached numpy-2.2.6-cp312-cp312-win_amd64.whl (12.6 MB)
+Using cached pycocotools-2.0.10-cp312-abi3-win_amd64.whl (76 kB)
+Using cached supervision-0.25.1-py3-none-any.whl (181 kB)
+Using cached defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+Using cached scipy-1.16.0-cp312-cp312-win_amd64.whl (38.4 MB)
+Using cached contourpy-1.3.2-cp312-cp312-win_amd64.whl (223 kB)
+Using cached matplotlib-3.10.3-cp312-cp312-win_amd64.whl (8.1 MB)
+Using cached cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Using cached fonttools-4.58.5-cp312-cp312-win_amd64.whl (2.2 MB)
+Using cached kiwisolver-1.4.8-cp312-cp312-win_amd64.whl (71 kB)
+Using cached packaging-25.0-py3-none-any.whl (66 kB)
+Using cached pillow-11.3.0-cp312-cp312-win_amd64.whl (7.0 MB)
+Using cached pyparsing-3.2.3-py3-none-any.whl (111 kB)
+Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Using cached PyYAML-6.0.2-cp312-cp312-win_amd64.whl (156 kB)
+Using cached requests-2.32.4-py3-none-any.whl (64 kB)
+Using cached charset_normalizer-3.4.2-cp312-cp312-win_amd64.whl (105 kB)
+Using cached idna-3.10-py3-none-any.whl (70 kB)
+Using cached urllib3-2.5.0-py3-none-any.whl (129 kB)
+Using cached certifi-2025.6.15-py3-none-any.whl (157 kB)
+Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Using cached tqdm-4.67.1-py3-none-any.whl (78 kB)
+Using cached colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Using cached timm-1.0.16-py3-none-any.whl (2.5 MB)
+Using cached huggingface_hub-0.33.2-py3-none-any.whl (515 kB)
+Using cached fsspec-2025.5.1-py3-none-any.whl (199 kB)
+Using cached typing_extensions-4.14.1-py3-none-any.whl (43 kB)
+Using cached filelock-3.18.0-py3-none-any.whl (16 kB)
+Using cached safetensors-0.5.3-cp38-abi3-win_amd64.whl (308 kB)
+Using cached torch-2.7.1-cp312-cp312-win_amd64.whl (216.1 MB)
+Using cached sympy-1.14.0-py3-none-any.whl (6.3 MB)
+Using cached mpmath-1.3.0-py3-none-any.whl (536 kB)
+Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+Using cached MarkupSafe-3.0.2-cp312-cp312-win_amd64.whl (15 kB)
+Using cached networkx-3.5-py3-none-any.whl (2.0 MB)
+Using cached setuptools-80.9.0-py3-none-any.whl (1.2 MB)
+Using cached torchvision-0.22.1-cp312-cp312-win_amd64.whl (1.7 MB)
+Using cached transformers-4.53.1-py3-none-any.whl (10.8 MB)
+Using cached tokenizers-0.21.2-cp39-abi3-win_amd64.whl (2.5 MB)
+Using cached regex-2024.11.6-cp312-cp312-win_amd64.whl (273 kB)
+Using cached yapf-0.43.0-py3-none-any.whl (256 kB)
+Using cached platformdirs-4.3.8-py3-none-any.whl (18 kB)
+Building wheels for collected packages: groundingdino
+  Running command Building wheel for groundingdino (pyproject.toml)
+  C:\Users\XIY144\AppData\Local\Temp\pip-build-env-bgnxmhhg\overlay\Lib\site-packages\torch\_subclasses\functional_tensor.py:276: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\torch\csrc\utils\tensor_numpy.cpp:81.)
+    cpu = _conversion_method_template(device=torch.device("cpu"))
+  Building wheel groundingdino-0.1.0
+  Compiling without CUDA
+  running bdist_wheel
+  running build
+  running build_py
+  copying groundingdino\version.py -> build\lib\groundingdino
+  copying groundingdino\__init__.py -> build\lib\groundingdino
+  copying groundingdino\datasets\transforms.py -> build\lib\groundingdino\datasets
+  copying groundingdino\datasets\__init__.py -> build\lib\groundingdino\datasets
+  copying groundingdino\models\registry.py -> build\lib\groundingdino\models
+  copying groundingdino\models\__init__.py -> build\lib\groundingdino\models
+  copying groundingdino\util\box_ops.py -> build\lib\groundingdino\util
+  copying groundingdino\util\get_tokenlizer.py -> build\lib\groundingdino\util
+  copying groundingdino\util\inference.py -> build\lib\groundingdino\util
+  copying groundingdino\util\logger.py -> build\lib\groundingdino\util
+  copying groundingdino\util\misc.py -> build\lib\groundingdino\util
+  copying groundingdino\util\slconfig.py -> build\lib\groundingdino\util
+  copying groundingdino\util\slio.py -> build\lib\groundingdino\util
+  copying groundingdino\util\time_counter.py -> build\lib\groundingdino\util
+  copying groundingdino\util\utils.py -> build\lib\groundingdino\util
+  copying groundingdino\util\visualizer.py -> build\lib\groundingdino\util
+  copying groundingdino\util\vl_utils.py -> build\lib\groundingdino\util
+  copying groundingdino\util\__init__.py -> build\lib\groundingdino\util
+  copying groundingdino\models\GroundingDINO\bertwarper.py -> build\lib\groundingdino\models\GroundingDINO
+  copying groundingdino\models\GroundingDINO\fuse_modules.py -> build\lib\groundingdino\models\GroundingDINO
+  copying groundingdino\models\GroundingDINO\groundingdino.py -> build\lib\groundingdino\models\GroundingDINO
+  copying groundingdino\models\GroundingDINO\ms_deform_attn.py -> build\lib\groundingdino\models\GroundingDINO
+  copying groundingdino\models\GroundingDINO\transformer.py -> build\lib\groundingdino\models\GroundingDINO
+  copying groundingdino\models\GroundingDINO\transformer_vanilla.py -> build\lib\groundingdino\models\GroundingDINO
+  copying groundingdino\models\GroundingDINO\utils.py -> build\lib\groundingdino\models\GroundingDINO
+  copying groundingdino\models\GroundingDINO\__init__.py -> build\lib\groundingdino\models\GroundingDINO
+  copying groundingdino\models\GroundingDINO\backbone\backbone.py -> build\lib\groundingdino\models\GroundingDINO\backbone
+  copying groundingdino\models\GroundingDINO\backbone\position_encoding.py -> build\lib\groundingdino\models\GroundingDINO\backbone
+  copying groundingdino\models\GroundingDINO\backbone\swin_transformer.py -> build\lib\groundingdino\models\GroundingDINO\backbone
+  copying groundingdino\models\GroundingDINO\backbone\__init__.py -> build\lib\groundingdino\models\GroundingDINO\backbone
+  installing to build\bdist.win-amd64\wheel
+  running install
+  running install_lib
+  creating build\bdist.win-amd64\wheel
+  creating build\bdist.win-amd64\wheel\groundingdino
+  creating build\bdist.win-amd64\wheel\groundingdino\datasets
+  copying build\lib\groundingdino\datasets\transforms.py -> build\bdist.win-amd64\wheel\.\groundingdino\datasets
+  copying build\lib\groundingdino\datasets\__init__.py -> build\bdist.win-amd64\wheel\.\groundingdino\datasets
+  creating build\bdist.win-amd64\wheel\groundingdino\models
+  creating build\bdist.win-amd64\wheel\groundingdino\models\GroundingDINO
+  creating build\bdist.win-amd64\wheel\groundingdino\models\GroundingDINO\backbone
+  copying build\lib\groundingdino\models\GroundingDINO\backbone\backbone.py -> build\bdist.win-amd64\wheel\.\groundingdino\models\GroundingDINO\backbone
+  copying build\lib\groundingdino\models\GroundingDINO\backbone\position_encoding.py -> build\bdist.win-amd64\wheel\.\groundingdino\models\GroundingDINO\backbone
+  copying build\lib\groundingdino\models\GroundingDINO\backbone\swin_transformer.py -> build\bdist.win-amd64\wheel\.\groundingdino\models\GroundingDINO\backbone
+  copying build\lib\groundingdino\models\GroundingDINO\backbone\__init__.py -> build\bdist.win-amd64\wheel\.\groundingdino\models\GroundingDINO\backbone
+  copying build\lib\groundingdino\models\GroundingDINO\bertwarper.py -> build\bdist.win-amd64\wheel\.\groundingdino\models\GroundingDINO
+  copying build\lib\groundingdino\models\GroundingDINO\fuse_modules.py -> build\bdist.win-amd64\wheel\.\groundingdino\models\GroundingDINO
+  copying build\lib\groundingdino\models\GroundingDINO\groundingdino.py -> build\bdist.win-amd64\wheel\.\groundingdino\models\GroundingDINO
+  copying build\lib\groundingdino\models\GroundingDINO\ms_deform_attn.py -> build\bdist.win-amd64\wheel\.\groundingdino\models\GroundingDINO
+  copying build\lib\groundingdino\models\GroundingDINO\transformer.py -> build\bdist.win-amd64\wheel\.\groundingdino\models\GroundingDINO
+  copying build\lib\groundingdino\models\GroundingDINO\transformer_vanilla.py -> build\bdist.win-amd64\wheel\.\groundingdino\models\GroundingDINO
+  copying build\lib\groundingdino\models\GroundingDINO\utils.py -> build\bdist.win-amd64\wheel\.\groundingdino\models\GroundingDINO
+  copying build\lib\groundingdino\models\GroundingDINO\__init__.py -> build\bdist.win-amd64\wheel\.\groundingdino\models\GroundingDINO
+  copying build\lib\groundingdino\models\registry.py -> build\bdist.win-amd64\wheel\.\groundingdino\models
+  copying build\lib\groundingdino\models\__init__.py -> build\bdist.win-amd64\wheel\.\groundingdino\models
+  creating build\bdist.win-amd64\wheel\groundingdino\util
+  copying build\lib\groundingdino\util\box_ops.py -> build\bdist.win-amd64\wheel\.\groundingdino\util
+  copying build\lib\groundingdino\util\get_tokenlizer.py -> build\bdist.win-amd64\wheel\.\groundingdino\util
+  copying build\lib\groundingdino\util\inference.py -> build\bdist.win-amd64\wheel\.\groundingdino\util
+  copying build\lib\groundingdino\util\logger.py -> build\bdist.win-amd64\wheel\.\groundingdino\util
+  copying build\lib\groundingdino\util\misc.py -> build\bdist.win-amd64\wheel\.\groundingdino\util
+  copying build\lib\groundingdino\util\slconfig.py -> build\bdist.win-amd64\wheel\.\groundingdino\util
+  copying build\lib\groundingdino\util\slio.py -> build\bdist.win-amd64\wheel\.\groundingdino\util
+  copying build\lib\groundingdino\util\time_counter.py -> build\bdist.win-amd64\wheel\.\groundingdino\util
+  copying build\lib\groundingdino\util\utils.py -> build\bdist.win-amd64\wheel\.\groundingdino\util
+  copying build\lib\groundingdino\util\visualizer.py -> build\bdist.win-amd64\wheel\.\groundingdino\util
+  copying build\lib\groundingdino\util\vl_utils.py -> build\bdist.win-amd64\wheel\.\groundingdino\util
+  copying build\lib\groundingdino\util\__init__.py -> build\bdist.win-amd64\wheel\.\groundingdino\util
+  copying build\lib\groundingdino\version.py -> build\bdist.win-amd64\wheel\.\groundingdino
+  copying build\lib\groundingdino\__init__.py -> build\bdist.win-amd64\wheel\.\groundingdino
+  running install_egg_info
+  running egg_info
+  writing groundingdino.egg-info\PKG-INFO
+  writing dependency_links to groundingdino.egg-info\dependency_links.txt
+  writing requirements to groundingdino.egg-info\requires.txt
+  writing top-level names to groundingdino.egg-info\top_level.txt
+  reading manifest file 'groundingdino.egg-info\SOURCES.txt'
+  adding license file 'LICENSE'
+  writing manifest file 'groundingdino.egg-info\SOURCES.txt'
+  Copying groundingdino.egg-info to build\bdist.win-amd64\wheel\.\groundingdino-0.1.0-py3.12.egg-info
+  running install_scripts
+  creating build\bdist.win-amd64\wheel\groundingdino-0.1.0.dist-info\WHEEL
+  creating 'C:\Users\XIY144\AppData\Local\Temp\pip-wheel-1ehasiuc\.tmp-otkdnqc9\groundingdino-0.1.0-py3-none-any.whl' and adding 'build\bdist.win-amd64\wheel' to it
+  adding 'groundingdino/__init__.py'
+  adding 'groundingdino/version.py'
+  adding 'groundingdino/datasets/__init__.py'
+  adding 'groundingdino/datasets/transforms.py'
+  adding 'groundingdino/models/__init__.py'
+  adding 'groundingdino/models/registry.py'
+  adding 'groundingdino/models/GroundingDINO/__init__.py'
+  adding 'groundingdino/models/GroundingDINO/bertwarper.py'
+  adding 'groundingdino/models/GroundingDINO/fuse_modules.py'
+  adding 'groundingdino/models/GroundingDINO/groundingdino.py'
+  adding 'groundingdino/models/GroundingDINO/ms_deform_attn.py'
+  adding 'groundingdino/models/GroundingDINO/transformer.py'
+  adding 'groundingdino/models/GroundingDINO/transformer_vanilla.py'
+  adding 'groundingdino/models/GroundingDINO/utils.py'
+  adding 'groundingdino/models/GroundingDINO/backbone/__init__.py'
+  adding 'groundingdino/models/GroundingDINO/backbone/backbone.py'
+  adding 'groundingdino/models/GroundingDINO/backbone/position_encoding.py'
+  adding 'groundingdino/models/GroundingDINO/backbone/swin_transformer.py'
+  adding 'groundingdino/util/__init__.py'
+  adding 'groundingdino/util/box_ops.py'
+  adding 'groundingdino/util/get_tokenlizer.py'
+  adding 'groundingdino/util/inference.py'
+  adding 'groundingdino/util/logger.py'
+  adding 'groundingdino/util/misc.py'
+  adding 'groundingdino/util/slconfig.py'
+  adding 'groundingdino/util/slio.py'
+  adding 'groundingdino/util/time_counter.py'
+  adding 'groundingdino/util/utils.py'
+  adding 'groundingdino/util/visualizer.py'
+  adding 'groundingdino/util/vl_utils.py'
+  adding 'groundingdino-0.1.0.dist-info/licenses/LICENSE'
+  adding 'groundingdino-0.1.0.dist-info/METADATA'
+  adding 'groundingdino-0.1.0.dist-info/WHEEL'
+  adding 'groundingdino-0.1.0.dist-info/top_level.txt'
+  adding 'groundingdino-0.1.0.dist-info/RECORD'
+  removing build\bdist.win-amd64\wheel
+  Building wheel for groundingdino (pyproject.toml) ... done
+  Created wheel for groundingdino: filename=groundingdino-0.1.0-py3-none-any.whl size=84110 sha256=c1f4c3d90b3fb5b7cd04933742207c388b6458f7b442d537b6d442c9704bc108
+  Stored in directory: C:\Users\XIY144\AppData\Local\Temp\pip-ephem-wheel-cache-ai1w2yha\wheels\bb\84\a2\43d1afbb23bd8bc52e3582a4c3afc73c4e221f21e4d54fc410
+Successfully built groundingdino
+Installing collected packages: mpmath, addict, urllib3, typing-extensions, sympy, six, setuptools, safetensors, regex, pyyaml, pyparsing, platformdirs, pillow, packaging, numpy, networkx, MarkupSafe, kiwisolver, idna, fsspec, fonttools, filelock, defusedxml, cycler, colorama, charset_normalizer, certifi, yapf, tqdm, scipy, requests, python-dateutil, pycocotools, opencv-python, jinja2, contourpy, torch, matplotlib, huggingface_hub, torchvision, tokenizers, supervision, transformers, timm, groundingdino
+  Attempting uninstall: mpmath
+    Found existing installation: mpmath 1.3.0
+    Uninstalling mpmath-1.3.0:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\mpmath-1.3.0.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\mpmath\
+      Successfully uninstalled mpmath-1.3.0
+  Attempting uninstall: addict
+    Found existing installation: addict 2.4.0
+    Uninstalling addict-2.4.0:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\addict-2.4.0.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\addict\
+      Successfully uninstalled addict-2.4.0
+  Attempting uninstall: urllib3
+    Found existing installation: urllib3 2.5.0
+    Uninstalling urllib3-2.5.0:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\urllib3-2.5.0.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\urllib3\
+      Successfully uninstalled urllib3-2.5.0
+  Attempting uninstall: typing-extensions
+    Found existing installation: typing_extensions 4.14.1
+    Uninstalling typing_extensions-4.14.1:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\__pycache__\typing_extensions.cpython-312.pyc
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\typing_extensions-4.14.1.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\typing_extensions.py
+      Successfully uninstalled typing_extensions-4.14.1
+  Attempting uninstall: sympy
+    Found existing installation: sympy 1.13.1
+    Uninstalling sympy-1.13.1:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\scripts\isympy.exe
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\__pycache__\isympy.cpython-312.pyc
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\isympy.py
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\sympy-1.13.1.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\sympy\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\share\man\man1\isympy.1
+      Successfully uninstalled sympy-1.13.1
+  Attempting uninstall: six
+    Found existing installation: six 1.17.0
+    Uninstalling six-1.17.0:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\__pycache__\six.cpython-312.pyc
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\six-1.17.0.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\six.py
+      Successfully uninstalled six-1.17.0
+  Attempting uninstall: setuptools
+    Found existing installation: setuptools 80.9.0
+    Uninstalling setuptools-80.9.0:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\_distutils_hack\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\distutils-precedence.pth
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\pkg_resources\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\setuptools-80.9.0.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\setuptools\
+      Successfully uninstalled setuptools-80.9.0
+  Attempting uninstall: safetensors
+    Found existing installation: safetensors 0.5.3
+    Uninstalling safetensors-0.5.3:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\safetensors-0.5.3.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\safetensors\
+      Successfully uninstalled safetensors-0.5.3
+  Attempting uninstall: regex
+    Found existing installation: regex 2024.11.6
+    Uninstalling regex-2024.11.6:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\regex-2024.11.6.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\regex\
+      Successfully uninstalled regex-2024.11.6
+  Attempting uninstall: pyyaml
+    Found existing installation: PyYAML 6.0.2
+    Uninstalling PyYAML-6.0.2:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\_yaml\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\pyyaml-6.0.2.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\yaml\
+      Successfully uninstalled PyYAML-6.0.2
+  Attempting uninstall: pyparsing
+    Found existing installation: pyparsing 3.2.3
+    Uninstalling pyparsing-3.2.3:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\pyparsing-3.2.3.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\pyparsing\
+      Successfully uninstalled pyparsing-3.2.3
+  Attempting uninstall: platformdirs
+    Found existing installation: platformdirs 4.3.8
+    Uninstalling platformdirs-4.3.8:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\platformdirs-4.3.8.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\platformdirs\
+      Successfully uninstalled platformdirs-4.3.8
+  Attempting uninstall: pillow
+    Found existing installation: pillow 11.3.0
+    Uninstalling pillow-11.3.0:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\pil\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\pillow-11.3.0.dist-info\
+      Successfully uninstalled pillow-11.3.0
+  Attempting uninstall: packaging
+    Found existing installation: packaging 25.0
+    Uninstalling packaging-25.0:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\packaging-25.0.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\packaging\
+      Successfully uninstalled packaging-25.0
+  Attempting uninstall: numpy
+    Found existing installation: numpy 1.26.3
+    Uninstalling numpy-1.26.3:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\scripts\f2py.exe
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\numpy-1.26.3-cp312-cp312-win_amd64.whl
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\numpy-1.26.3.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\numpy.libs\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\numpy\
+      Successfully uninstalled numpy-1.26.3
+  Attempting uninstall: networkx
+    Found existing installation: networkx 3.5
+    Uninstalling networkx-3.5:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\networkx-3.5.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\networkx\
+      Successfully uninstalled networkx-3.5
+  Attempting uninstall: MarkupSafe
+    Found existing installation: MarkupSafe 3.0.2
+    Uninstalling MarkupSafe-3.0.2:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\markupsafe-3.0.2.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\markupsafe\
+      Successfully uninstalled MarkupSafe-3.0.2
+  Attempting uninstall: kiwisolver
+    Found existing installation: kiwisolver 1.4.8
+    Uninstalling kiwisolver-1.4.8:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\kiwisolver-1.4.8.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\kiwisolver\
+      Successfully uninstalled kiwisolver-1.4.8
+  Attempting uninstall: idna
+    Found existing installation: idna 3.10
+    Uninstalling idna-3.10:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\idna-3.10.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\idna\
+      Successfully uninstalled idna-3.10
+  Attempting uninstall: fsspec
+    Found existing installation: fsspec 2025.5.1
+    Uninstalling fsspec-2025.5.1:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\fsspec-2025.5.1.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\fsspec\
+      Successfully uninstalled fsspec-2025.5.1
+  Attempting uninstall: fonttools
+    Found existing installation: fonttools 4.58.5
+    Uninstalling fonttools-4.58.5:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\scripts\fonttools.exe
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\scripts\pyftmerge.exe
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\scripts\pyftsubset.exe
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\scripts\ttx.exe
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\fonttools-4.58.5.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\fonttools\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\share\man\man1\ttx.1
+      Successfully uninstalled fonttools-4.58.5
+  Attempting uninstall: filelock
+    Found existing installation: filelock 3.18.0
+    Uninstalling filelock-3.18.0:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\filelock-3.18.0.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\filelock\
+      Successfully uninstalled filelock-3.18.0
+  Attempting uninstall: defusedxml
+    Found existing installation: defusedxml 0.7.1
+    Uninstalling defusedxml-0.7.1:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\defusedxml-0.7.1.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\defusedxml\
+      Successfully uninstalled defusedxml-0.7.1
+  Attempting uninstall: cycler
+    Found existing installation: cycler 0.12.1
+    Uninstalling cycler-0.12.1:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cycler-0.12.1.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cycler\
+      Successfully uninstalled cycler-0.12.1
+  Attempting uninstall: colorama
+    Found existing installation: colorama 0.4.6
+    Uninstalling colorama-0.4.6:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\colorama-0.4.6.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\colorama\
+      Successfully uninstalled colorama-0.4.6
+  Attempting uninstall: charset_normalizer
+    Found existing installation: charset-normalizer 3.4.2
+    Uninstalling charset-normalizer-3.4.2:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\scripts\normalizer.exe
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\charset_normalizer-3.4.2.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\charset_normalizer\
+      Successfully uninstalled charset-normalizer-3.4.2
+  Attempting uninstall: certifi
+    Found existing installation: certifi 2025.6.15
+    Uninstalling certifi-2025.6.15:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\certifi-2025.6.15.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\certifi\
+      Successfully uninstalled certifi-2025.6.15
+  Attempting uninstall: yapf
+    Found existing installation: yapf 0.43.0
+    Uninstalling yapf-0.43.0:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\scripts\yapf-diff.exe
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\scripts\yapf.exe
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\yapf-0.43.0.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\yapf\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\yapf_third_party\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\yapftests\
+      Successfully uninstalled yapf-0.43.0
+  Attempting uninstall: tqdm
+    Found existing installation: tqdm 4.67.1
+    Uninstalling tqdm-4.67.1:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\scripts\tqdm.exe
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\tqdm-4.67.1.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\tqdm\
+      Successfully uninstalled tqdm-4.67.1
+  Attempting uninstall: scipy
+    Found existing installation: scipy 1.16.0
+    Uninstalling scipy-1.16.0:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\scipy-1.16.0-cp312-cp312-win_amd64.whl
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\scipy-1.16.0.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\scipy.libs\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\scipy\
+      Successfully uninstalled scipy-1.16.0
+  Attempting uninstall: requests
+    Found existing installation: requests 2.32.4
+    Uninstalling requests-2.32.4:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\requests-2.32.4.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\requests\
+      Successfully uninstalled requests-2.32.4
+  Attempting uninstall: python-dateutil
+    Found existing installation: python-dateutil 2.9.0.post0
+    Uninstalling python-dateutil-2.9.0.post0:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\dateutil\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\python_dateutil-2.9.0.post0.dist-info\
+      Successfully uninstalled python-dateutil-2.9.0.post0
+  Attempting uninstall: pycocotools
+    Found existing installation: pycocotools 2.0.10
+    Uninstalling pycocotools-2.0.10:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\pycocotools-2.0.10.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\pycocotools\
+      Successfully uninstalled pycocotools-2.0.10
+  Attempting uninstall: opencv-python
+    Found existing installation: opencv-python 4.12.0.88
+    Uninstalling opencv-python-4.12.0.88:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\__init__.py
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\__init__.pyi
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\__pycache__\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\aruco\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\barcode\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\config-3.py
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\config.py
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\cuda\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\cv2.pyd
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\data\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\detail\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\dnn\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\error\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\fisheye\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\flann\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\gapi\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\ipp\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\license-3rd-party.txt
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\license.txt
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\load_config_py2.py
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\load_config_py3.py
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\mat_wrapper\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\misc\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\ml\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\ocl\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\ogl\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\opencv_videoio_ffmpeg4120_64.dll
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\parallel\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\py.typed
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\samples\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\segmentation\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\typing\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\utils\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\version.py
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\cv2\videoio_registry\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\opencv_python-4.12.0.88.dist-info\
+      Successfully uninstalled opencv-python-4.12.0.88
+  Attempting uninstall: jinja2
+    Found existing installation: Jinja2 3.1.6
+    Uninstalling Jinja2-3.1.6:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\jinja2-3.1.6.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\jinja2\
+      Successfully uninstalled Jinja2-3.1.6
+  Attempting uninstall: contourpy
+    Found existing installation: contourpy 1.3.2
+    Uninstalling contourpy-1.3.2:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\contourpy-1.3.2.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\contourpy\
+      Successfully uninstalled contourpy-1.3.2
+  Attempting uninstall: torch
+    Found existing installation: torch 2.5.1+cu121
+    Uninstalling torch-2.5.1+cu121:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\scripts\convert-caffe2-to-onnx.exe
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\scripts\convert-onnx-to-caffe2.exe
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\scripts\torchfrtrace.exe
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\scripts\torchrun.exe
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\functorch\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\torch-2.5.1+cu121.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\torch\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\torchgen\
+      Successfully uninstalled torch-2.5.1+cu121
+  Attempting uninstall: matplotlib
+    Found existing installation: matplotlib 3.10.3
+    Uninstalling matplotlib-3.10.3:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\__pycache__\pylab.cpython-312.pyc
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\matplotlib-3.10.3.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\matplotlib\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\mpl_toolkits\axes_grid1\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\mpl_toolkits\axisartist\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\mpl_toolkits\mplot3d\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\pylab.py
+      Successfully uninstalled matplotlib-3.10.3
+  Attempting uninstall: huggingface_hub
+    Found existing installation: huggingface-hub 0.33.2
+    Uninstalling huggingface-hub-0.33.2:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\scripts\huggingface-cli.exe
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\scripts\tiny-agents.exe
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\huggingface_hub-0.33.2.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\huggingface_hub\
+      Successfully uninstalled huggingface-hub-0.33.2
+  Attempting uninstall: torchvision
+    Found existing installation: torchvision 0.20.1+cu121
+    Uninstalling torchvision-0.20.1+cu121:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\torchvision-0.20.1+cu121.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\torchvision\
+      Successfully uninstalled torchvision-0.20.1+cu121
+  Attempting uninstall: tokenizers
+    Found existing installation: tokenizers 0.21.2
+    Uninstalling tokenizers-0.21.2:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\tokenizers-0.21.2.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\tokenizers\
+      Successfully uninstalled tokenizers-0.21.2
+  Attempting uninstall: supervision
+    Found existing installation: supervision 0.25.1
+    Uninstalling supervision-0.25.1:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\supervision-0.25.1.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\supervision\
+      Successfully uninstalled supervision-0.25.1
+  Attempting uninstall: transformers
+    Found existing installation: transformers 4.53.1
+    Uninstalling transformers-4.53.1:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\scripts\transformers-cli.exe
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\scripts\transformers.exe
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\transformers-4.53.1.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\transformers\
+      Successfully uninstalled transformers-4.53.1
+  Attempting uninstall: timm
+    Found existing installation: timm 1.0.16
+    Uninstalling timm-1.0.16:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\timm-1.0.16.dist-info\
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\timm\
+      Successfully uninstalled timm-1.0.16
+  Attempting uninstall: groundingdino
+    Found existing installation: groundingdino 0.1.0
+    Uninstalling groundingdino-0.1.0:
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\__editable__.groundingdino-0.1.0.pth
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\__editable___groundingdino_0_1_0_finder.py
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\__pycache__\__editable___groundingdino_0_1_0_finder.cpython-312.pyc
+      Removing file or directory c:\users\xiy144\appdata\roaming\python\python312\site-packages\groundingdino-0.1.0.dist-info\
+      Successfully uninstalled groundingdino-0.1.0
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+torchaudio 2.5.1+cu121 requires torch==2.5.1+cu121, but you have torch 2.7.1 which is incompatible.
+numba 0.59.1 requires numpy<1.27,>=1.22, but you have numpy 2.2.6 which is incompatible.
+pywavelets 1.5.0 requires numpy<2.0,>=1.22.4, but you have numpy 2.2.6 which is incompatible.
+s3fs 2024.3.1 requires fsspec==2024.3.1, but you have fsspec 2025.5.1 which is incompatible.
+streamlit 1.32.0 requires numpy<2,>=1.19.3, but you have numpy 2.2.6 which is incompatible.
+streamlit 1.32.0 requires packaging<24,>=16.8, but you have packaging 25.0 which is incompatible.
+streamlit 1.32.0 requires pillow<11,>=7.1.0, but you have pillow 11.3.0 which is incompatible.
+streamlit 1.32.0 requires protobuf<5,>=3.20, but you have protobuf 6.31.1 which is incompatible.
+streamlit 1.32.0 requires rich<14,>=10.14.0, but you have rich 14.0.0 which is incompatible.
+ultralytics 8.2.101 requires numpy<2.0.0,>=1.23.0, but you have numpy 2.2.6 which is incompatible.
+Successfully installed MarkupSafe-3.0.2 addict-2.4.0 certifi-2025.6.15 charset_normalizer-3.4.2 colorama-0.4.6 contourpy-1.3.2 cycler-0.12.1 defusedxml-0.7.1 filelock-3.18.0 fonttools-4.58.5 fsspec-2025.5.1 groundingdino-0.1.0 huggingface_hub-0.33.2 idna-3.10 jinja2-3.1.6 kiwisolver-1.4.8 matplotlib-3.10.3 mpmath-1.3.0 networkx-3.5 numpy-2.2.6 opencv-python-4.12.0.88 packaging-25.0 pillow-11.3.0 platformdirs-4.3.8 pycocotools-2.0.10 pyparsing-3.2.3 python-dateutil-2.9.0.post0 pyyaml-6.0.2 regex-2024.11.6 requests-2.32.4 safetensors-0.5.3 scipy-1.16.0 setuptools-80.9.0 six-1.17.0 supervision-0.25.1 sympy-1.14.0 timm-1.0.16 tokenizers-0.21.2 torch-2.7.1 torchvision-0.22.1 tqdm-4.67.1 transformers-4.53.1 typing-extensions-4.14.1 urllib3-2.5.0 yapf-0.43.0

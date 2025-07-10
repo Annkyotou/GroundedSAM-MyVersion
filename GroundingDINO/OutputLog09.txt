@@ -1,0 +1,61 @@
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>python setup.py build_ext --inplace
+Building wheel groundingdino-0.1.0
+Compiling with CUDA
+running build_ext
+Traceback (most recent call last):
+  File "C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO\setup.py", line 195, in <module>
+    setup(
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\setuptools\__init__.py", line 115, in setup
+    return distutils.core.setup(**attrs)
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\setuptools\_distutils\core.py", line 186, in setup
+    return run_commands(dist)
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\setuptools\_distutils\core.py", line 202, in run_commands
+    dist.run_commands()
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\setuptools\_distutils\dist.py", line 1002, in run_commands
+    self.run_command(cmd)
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\setuptools\dist.py", line 1102, in run_command
+    super().run_command(command)
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\setuptools\_distutils\dist.py", line 1021, in run_command
+    cmd_obj.run()
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\setuptools\command\build_ext.py", line 96, in run
+    _build_ext.run(self)
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\setuptools\_distutils\command\build_ext.py", line 368, in run
+    self.build_extensions()
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\torch\utils\cpp_extension.py", line 506, in build_extensions
+    compiler_name, compiler_version = self._check_abi()
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\torch\utils\cpp_extension.py", line 898, in _check_abi
+    raise UserWarning(msg)
+UserWarning: It seems that the VC environment is activated but DISTUTILS_USE_SDK is not set.This may lead to multiple activations of the VC env.Please set `DISTUTILS_USE_SDK=1` and try again.
+
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>DISTUTILS_USE_SDK=1
+'DISTUTILS_USE_SDK' is not recognized as an internal or external command,
+operable program or batch file.
+
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>python setup.py build_ext --inplace
+Building wheel groundingdino-0.1.0
+Compiling with CUDA
+running build_ext
+Traceback (most recent call last):
+  File "C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO\setup.py", line 195, in <module>
+    setup(
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\setuptools\__init__.py", line 115, in setup
+    return distutils.core.setup(**attrs)
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\setuptools\_distutils\core.py", line 186, in setup
+    return run_commands(dist)
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\setuptools\_distutils\core.py", line 202, in run_commands
+    dist.run_commands()
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\setuptools\_distutils\dist.py", line 1002, in run_commands
+    self.run_command(cmd)
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\setuptools\dist.py", line 1102, in run_command
+    super().run_command(command)
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\setuptools\_distutils\dist.py", line 1021, in run_command
+    cmd_obj.run()
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\setuptools\command\build_ext.py", line 96, in run
+    _build_ext.run(self)
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\setuptools\_distutils\command\build_ext.py", line 368, in run
+    self.build_extensions()
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\torch\utils\cpp_extension.py", line 506, in build_extensions
+    compiler_name, compiler_version = self._check_abi()
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\torch\utils\cpp_extension.py", line 898, in _check_abi
+    raise UserWarning(msg)
+UserWarning: It seems that the VC environment is activated but DISTUTILS_USE_SDK is not set.This may lead to multiple activations of the VC env.Please set `DISTUTILS_USE_SDK=1` and try again.

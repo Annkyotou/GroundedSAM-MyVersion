@@ -1,0 +1,425 @@
+(base) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>conda create -n gdino python=3.10
+Retrieving notices: ...working... done
+Channels:
+ - conda-forge
+ - defaults
+Platform: win-64
+Collecting package metadata (repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: C:\Users\XIY144\.conda\envs\gdino
+
+  added / updated specs:
+    - python=3.10
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    ca-certificates-2025.6.15  |       h4c7d964_0         148 KB  conda-forge
+    libexpat-2.7.0             |       he0c23c2_0         138 KB  conda-forge
+    libffi-3.4.6               |       h537db12_1          44 KB  conda-forge
+    liblzma-5.8.1              |       h2466b09_2         102 KB  conda-forge
+    libsqlite-3.50.2           |       hf5d6505_0         1.2 MB  conda-forge
+    openssl-3.5.1              |       h725018a_0         8.9 MB  conda-forge
+    pip-25.1.1                 |     pyh8b19718_0         1.2 MB  conda-forge
+    python-3.10.18             |h8c5b53a_0_cpython        15.1 MB  conda-forge
+    setuptools-80.9.0          |     pyhff2d567_0         731 KB  conda-forge
+    tk-8.6.13                  |       h2c6b04d_2         3.3 MB  conda-forge
+    tzdata-2025b               |       h78e105d_0         120 KB  conda-forge
+    vc-14.3                    |      h41ae7f8_26          17 KB  conda-forge
+    vc14_runtime-14.44.35208   |      h818238b_26         738 KB  conda-forge
+    wheel-0.45.1               |     pyhd8ed1ab_1          61 KB  conda-forge
+    ------------------------------------------------------------
+                                           Total:        31.8 MB
+
+The following NEW packages will be INSTALLED:
+
+  bzip2              conda-forge/win-64::bzip2-1.0.8-h2466b09_7
+  ca-certificates    conda-forge/noarch::ca-certificates-2025.6.15-h4c7d964_0
+  libexpat           conda-forge/win-64::libexpat-2.7.0-he0c23c2_0
+  libffi             conda-forge/win-64::libffi-3.4.6-h537db12_1
+  liblzma            conda-forge/win-64::liblzma-5.8.1-h2466b09_2
+  libsqlite          conda-forge/win-64::libsqlite-3.50.2-hf5d6505_0
+  libzlib            conda-forge/win-64::libzlib-1.3.1-h2466b09_2
+  openssl            conda-forge/win-64::openssl-3.5.1-h725018a_0
+  pip                conda-forge/noarch::pip-25.1.1-pyh8b19718_0
+  python             conda-forge/win-64::python-3.10.18-h8c5b53a_0_cpython
+  setuptools         conda-forge/noarch::setuptools-80.9.0-pyhff2d567_0
+  tk                 conda-forge/win-64::tk-8.6.13-h2c6b04d_2
+  tzdata             conda-forge/noarch::tzdata-2025b-h78e105d_0
+  ucrt               conda-forge/win-64::ucrt-10.0.22621.0-h57928b3_1
+  vc                 conda-forge/win-64::vc-14.3-h41ae7f8_26
+  vc14_runtime       conda-forge/win-64::vc14_runtime-14.44.35208-h818238b_26
+  wheel              conda-forge/noarch::wheel-0.45.1-pyhd8ed1ab_1
+
+
+Proceed ([y]/n)? y
+
+
+Downloading and Extracting Packages:
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate gdino
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+
+(base) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>conda activate gdino
+
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>pip install torch==2.5.1+cu121 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+Looking in indexes: https://download.pytorch.org/whl/cu121
+Collecting torch==2.5.1+cu121
+  Downloading https://download.pytorch.org/whl/cu121/torch-2.5.1%2Bcu121-cp310-cp310-win_amd64.whl (2449.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 GB 41.0 MB/s eta 0:00:00
+Collecting torchvision
+  Downloading https://download.pytorch.org/whl/cu121/torchvision-0.20.1%2Bcu121-cp310-cp310-win_amd64.whl (6.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.1/6.1 MB 92.1 MB/s eta 0:00:00
+Collecting torchaudio
+  Downloading https://download.pytorch.org/whl/cu121/torchaudio-2.5.1%2Bcu121-cp310-cp310-win_amd64.whl (4.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.1/4.1 MB 82.4 MB/s eta 0:00:00
+Collecting filelock (from torch==2.5.1+cu121)
+  Downloading https://download.pytorch.org/whl/filelock-3.13.1-py3-none-any.whl.metadata (2.8 kB)
+Collecting typing-extensions>=4.8.0 (from torch==2.5.1+cu121)
+  Downloading https://download.pytorch.org/whl/typing_extensions-4.12.2-py3-none-any.whl.metadata (3.0 kB)
+Collecting networkx (from torch==2.5.1+cu121)
+  Downloading https://download.pytorch.org/whl/networkx-3.3-py3-none-any.whl.metadata (5.1 kB)
+Collecting jinja2 (from torch==2.5.1+cu121)
+  Downloading https://download.pytorch.org/whl/Jinja2-3.1.4-py3-none-any.whl.metadata (2.6 kB)
+Collecting fsspec (from torch==2.5.1+cu121)
+  Downloading https://download.pytorch.org/whl/fsspec-2024.6.1-py3-none-any.whl.metadata (11 kB)
+Collecting sympy==1.13.1 (from torch==2.5.1+cu121)
+  Using cached https://download.pytorch.org/whl/sympy-1.13.1-py3-none-any.whl (6.2 MB)
+Collecting mpmath<1.4,>=1.1.0 (from sympy==1.13.1->torch==2.5.1+cu121)
+  Downloading https://download.pytorch.org/whl/mpmath-1.3.0-py3-none-any.whl (536 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 17.1 MB/s eta 0:00:00
+Collecting numpy (from torchvision)
+  Downloading https://download.pytorch.org/whl/numpy-2.1.2-cp310-cp310-win_amd64.whl.metadata (59 kB)
+Collecting pillow!=8.3.*,>=5.3.0 (from torchvision)
+  Downloading https://download.pytorch.org/whl/pillow-11.0.0-cp310-cp310-win_amd64.whl.metadata (9.3 kB)
+Collecting MarkupSafe>=2.0 (from jinja2->torch==2.5.1+cu121)
+  Downloading https://download.pytorch.org/whl/MarkupSafe-2.1.5-cp310-cp310-win_amd64.whl (17 kB)
+Downloading https://download.pytorch.org/whl/pillow-11.0.0-cp310-cp310-win_amd64.whl (2.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.6/2.6 MB 74.3 MB/s eta 0:00:00
+Downloading https://download.pytorch.org/whl/typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+Downloading https://download.pytorch.org/whl/filelock-3.13.1-py3-none-any.whl (11 kB)
+Downloading https://download.pytorch.org/whl/fsspec-2024.6.1-py3-none-any.whl (177 kB)
+Downloading https://download.pytorch.org/whl/Jinja2-3.1.4-py3-none-any.whl (133 kB)
+Downloading https://download.pytorch.org/whl/networkx-3.3-py3-none-any.whl (1.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 96.0 MB/s eta 0:00:00
+Downloading https://download.pytorch.org/whl/numpy-2.1.2-cp310-cp310-win_amd64.whl (12.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.9/12.9 MB 100.8 MB/s eta 0:00:00
+Installing collected packages: mpmath, typing-extensions, sympy, pillow, numpy, networkx, MarkupSafe, fsspec, filelock, jinja2, torch, torchvision, torchaudio
+Successfully installed MarkupSafe-2.1.5 filelock-3.13.1 fsspec-2024.6.1 jinja2-3.1.4 mpmath-1.3.0 networkx-3.3 numpy-2.1.2 pillow-11.0.0 sympy-1.13.1 torch-2.5.1+cu121 torchaudio-2.5.1+cu121 torchvision-0.20.1+cu121 typing-extensions-4.12.2
+
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>echo %CUDA_HOME%
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1
+
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>nvcc --version
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2023 NVIDIA Corporation
+Built on Mon_Apr__3_17:36:15_Pacific_Daylight_Time_2023
+Cuda compilation tools, release 12.1, V12.1.105
+Build cuda_12.1.r12.1/compiler.32688072_0
+
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>python -c "import numpy; print(numpy.version.version)"
+2.1.2
+
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>pip install numpy==1.26.3
+Collecting numpy==1.26.3
+  Downloading numpy-1.26.3-cp310-cp310-win_amd64.whl.metadata (61 kB)
+Downloading numpy-1.26.3-cp310-cp310-win_amd64.whl (15.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.8/15.8 MB 66.4 MB/s eta 0:00:00
+Installing collected packages: numpy
+  Attempting uninstall: numpy
+    Found existing installation: numpy 2.1.2
+    Uninstalling numpy-2.1.2:
+      Successfully uninstalled numpy-2.1.2
+Successfully installed numpy-1.26.3
+
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.8.3
+** Copyright (c) 2022 Microsoft Corporation
+**********************************************************************
+[vcvarsall.bat] Environment initialized for: 'x64'
+
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>nvcc --version
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2023 NVIDIA Corporation
+Built on Mon_Apr__3_17:36:15_Pacific_Daylight_Time_2023
+Cuda compilation tools, release 12.1, V12.1.105
+Build cuda_12.1.r12.1/compiler.32688072_0
+
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>pip install --no-cache-dir -e .
+Obtaining file:///C:/Users/XIY144/Grounded-Segment-Anything/GroundingDINO
+  Installing build dependencies ... done
+  Checking if build backend supports build_editable ... done
+  Getting requirements to build editable ... done
+  Preparing editable metadata (pyproject.toml) ... done
+Collecting transformers (from groundingdino==0.1.0)
+  Downloading transformers-4.53.1-py3-none-any.whl.metadata (40 kB)
+Collecting addict (from groundingdino==0.1.0)
+  Downloading addict-2.4.0-py3-none-any.whl.metadata (1.0 kB)
+Collecting yapf (from groundingdino==0.1.0)
+  Downloading yapf-0.43.0-py3-none-any.whl.metadata (46 kB)
+Collecting timm (from groundingdino==0.1.0)
+  Downloading timm-1.0.16-py3-none-any.whl.metadata (57 kB)
+Collecting opencv-python (from groundingdino==0.1.0)
+  Downloading opencv_python-4.12.0.88-cp37-abi3-win_amd64.whl.metadata (19 kB)
+Collecting supervision (from groundingdino==0.1.0)
+  Downloading supervision-0.25.1-py3-none-any.whl.metadata (14 kB)
+Collecting pycocotools (from groundingdino==0.1.0)
+  Downloading pycocotools-2.0.10-cp310-cp310-win_amd64.whl.metadata (1.3 kB)
+Collecting numpy<2.3.0,>=2 (from opencv-python->groundingdino==0.1.0)
+  Downloading numpy-2.2.6-cp310-cp310-win_amd64.whl.metadata (60 kB)
+Collecting contourpy>=1.0.7 (from supervision->groundingdino==0.1.0)
+  Downloading contourpy-1.3.2-cp310-cp310-win_amd64.whl.metadata (5.5 kB)
+Collecting defusedxml<0.8.0,>=0.7.1 (from supervision->groundingdino==0.1.0)
+  Downloading defusedxml-0.7.1-py2.py3-none-any.whl.metadata (32 kB)
+Collecting matplotlib>=3.6.0 (from supervision->groundingdino==0.1.0)
+  Downloading matplotlib-3.10.3-cp310-cp310-win_amd64.whl.metadata (11 kB)
+Requirement already satisfied: pillow>=9.4 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from supervision->groundingdino==0.1.0) (11.0.0)
+Collecting pyyaml>=5.3 (from supervision->groundingdino==0.1.0)
+  Downloading PyYAML-6.0.2-cp310-cp310-win_amd64.whl.metadata (2.1 kB)
+Collecting requests>=2.26.0 (from supervision->groundingdino==0.1.0)
+  Downloading requests-2.32.4-py3-none-any.whl.metadata (4.9 kB)
+Collecting scipy<2.0.0,>=1.10.0 (from supervision->groundingdino==0.1.0)
+  Downloading scipy-1.15.3-cp310-cp310-win_amd64.whl.metadata (60 kB)
+Collecting tqdm>=4.62.3 (from supervision->groundingdino==0.1.0)
+  Downloading tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)
+Collecting cycler>=0.10 (from matplotlib>=3.6.0->supervision->groundingdino==0.1.0)
+  Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools>=4.22.0 (from matplotlib>=3.6.0->supervision->groundingdino==0.1.0)
+  Downloading fonttools-4.58.5-cp310-cp310-win_amd64.whl.metadata (109 kB)
+Collecting kiwisolver>=1.3.1 (from matplotlib>=3.6.0->supervision->groundingdino==0.1.0)
+  Downloading kiwisolver-1.4.8-cp310-cp310-win_amd64.whl.metadata (6.3 kB)
+Collecting packaging>=20.0 (from matplotlib>=3.6.0->supervision->groundingdino==0.1.0)
+  Downloading packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting pyparsing>=2.3.1 (from matplotlib>=3.6.0->supervision->groundingdino==0.1.0)
+  Downloading pyparsing-3.2.3-py3-none-any.whl.metadata (5.0 kB)
+Collecting python-dateutil>=2.7 (from matplotlib>=3.6.0->supervision->groundingdino==0.1.0)
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting six>=1.5 (from python-dateutil>=2.7->matplotlib>=3.6.0->supervision->groundingdino==0.1.0)
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting charset_normalizer<4,>=2 (from requests>=2.26.0->supervision->groundingdino==0.1.0)
+  Downloading charset_normalizer-3.4.2-cp310-cp310-win_amd64.whl.metadata (36 kB)
+Collecting idna<4,>=2.5 (from requests>=2.26.0->supervision->groundingdino==0.1.0)
+  Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+Collecting urllib3<3,>=1.21.1 (from requests>=2.26.0->supervision->groundingdino==0.1.0)
+  Downloading urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting certifi>=2017.4.17 (from requests>=2.26.0->supervision->groundingdino==0.1.0)
+  Downloading certifi-2025.6.15-py3-none-any.whl.metadata (2.4 kB)
+Collecting colorama (from tqdm>=4.62.3->supervision->groundingdino==0.1.0)
+  Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+Requirement already satisfied: torch in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from timm->groundingdino==0.1.0) (2.5.1+cu121)
+Requirement already satisfied: torchvision in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from timm->groundingdino==0.1.0) (0.20.1+cu121)
+Collecting huggingface_hub (from timm->groundingdino==0.1.0)
+  Downloading huggingface_hub-0.33.2-py3-none-any.whl.metadata (14 kB)
+Collecting safetensors (from timm->groundingdino==0.1.0)
+  Downloading safetensors-0.5.3-cp38-abi3-win_amd64.whl.metadata (3.9 kB)
+Requirement already satisfied: filelock in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from huggingface_hub->timm->groundingdino==0.1.0) (3.13.1)
+Requirement already satisfied: fsspec>=2023.5.0 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from huggingface_hub->timm->groundingdino==0.1.0) (2024.6.1)
+Requirement already satisfied: typing-extensions>=3.7.4.3 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from huggingface_hub->timm->groundingdino==0.1.0) (4.12.2)
+Requirement already satisfied: networkx in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from torch->timm->groundingdino==0.1.0) (3.3)
+Requirement already satisfied: jinja2 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from torch->timm->groundingdino==0.1.0) (3.1.4)
+Requirement already satisfied: sympy==1.13.1 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from torch->timm->groundingdino==0.1.0) (1.13.1)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from sympy==1.13.1->torch->timm->groundingdino==0.1.0) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from jinja2->torch->timm->groundingdino==0.1.0) (2.1.5)
+Collecting regex!=2019.12.17 (from transformers->groundingdino==0.1.0)
+  Downloading regex-2024.11.6-cp310-cp310-win_amd64.whl.metadata (41 kB)
+Collecting tokenizers<0.22,>=0.21 (from transformers->groundingdino==0.1.0)
+  Downloading tokenizers-0.21.2-cp39-abi3-win_amd64.whl.metadata (6.9 kB)
+Collecting platformdirs>=3.5.1 (from yapf->groundingdino==0.1.0)
+  Downloading platformdirs-4.3.8-py3-none-any.whl.metadata (12 kB)
+Collecting tomli>=2.0.1 (from yapf->groundingdino==0.1.0)
+  Downloading tomli-2.2.1-py3-none-any.whl.metadata (10 kB)
+Downloading addict-2.4.0-py3-none-any.whl (3.8 kB)
+Downloading opencv_python-4.12.0.88-cp37-abi3-win_amd64.whl (39.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 39.0/39.0 MB 80.0 MB/s eta 0:00:00
+Downloading numpy-2.2.6-cp310-cp310-win_amd64.whl (12.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.9/12.9 MB 116.0 MB/s eta 0:00:00
+Downloading pycocotools-2.0.10-cp310-cp310-win_amd64.whl (80 kB)
+Downloading supervision-0.25.1-py3-none-any.whl (181 kB)
+Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+Downloading scipy-1.15.3-cp310-cp310-win_amd64.whl (41.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 41.3/41.3 MB 125.0 MB/s eta 0:00:00
+Downloading contourpy-1.3.2-cp310-cp310-win_amd64.whl (221 kB)
+Downloading matplotlib-3.10.3-cp310-cp310-win_amd64.whl (8.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.1/8.1 MB 123.7 MB/s eta 0:00:00
+Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Downloading fonttools-4.58.5-cp310-cp310-win_amd64.whl (2.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 124.1 MB/s eta 0:00:00
+Downloading kiwisolver-1.4.8-cp310-cp310-win_amd64.whl (71 kB)
+Downloading packaging-25.0-py3-none-any.whl (66 kB)
+Downloading pyparsing-3.2.3-py3-none-any.whl (111 kB)
+Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Downloading PyYAML-6.0.2-cp310-cp310-win_amd64.whl (161 kB)
+Downloading requests-2.32.4-py3-none-any.whl (64 kB)
+Downloading charset_normalizer-3.4.2-cp310-cp310-win_amd64.whl (105 kB)
+Downloading idna-3.10-py3-none-any.whl (70 kB)
+Downloading urllib3-2.5.0-py3-none-any.whl (129 kB)
+Downloading certifi-2025.6.15-py3-none-any.whl (157 kB)
+Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Downloading tqdm-4.67.1-py3-none-any.whl (78 kB)
+Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Downloading timm-1.0.16-py3-none-any.whl (2.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.5/2.5 MB 139.0 MB/s eta 0:00:00
+Downloading huggingface_hub-0.33.2-py3-none-any.whl (515 kB)
+Downloading safetensors-0.5.3-cp38-abi3-win_amd64.whl (308 kB)
+Downloading transformers-4.53.1-py3-none-any.whl (10.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.8/10.8 MB 135.4 MB/s eta 0:00:00
+Downloading tokenizers-0.21.2-cp39-abi3-win_amd64.whl (2.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.5/2.5 MB 140.5 MB/s eta 0:00:00
+Downloading regex-2024.11.6-cp310-cp310-win_amd64.whl (274 kB)
+Downloading yapf-0.43.0-py3-none-any.whl (256 kB)
+Downloading platformdirs-4.3.8-py3-none-any.whl (18 kB)
+Downloading tomli-2.2.1-py3-none-any.whl (14 kB)
+Building wheels for collected packages: groundingdino
+  Building editable for groundingdino (pyproject.toml) ... done
+  Created wheel for groundingdino: filename=groundingdino-0.1.0-0.editable-py3-none-any.whl size=11183 sha256=656f7740d0c0644bb2fd23dc022b6429636a653dee320f5ed27d45d812f50e1b
+  Stored in directory: C:\Users\XIY144\AppData\Local\Temp\pip-ephem-wheel-cache-xkwuwswq\wheels\40\d1\98\b8c53f9a1da486afa9d43c1fd5d130f55a518a56e3f03036da
+Successfully built groundingdino
+Installing collected packages: addict, urllib3, tomli, six, safetensors, regex, pyyaml, pyparsing, platformdirs, packaging, numpy, kiwisolver, idna, fonttools, defusedxml, cycler, colorama, charset_normalizer, certifi, yapf, tqdm, scipy, requests, python-dateutil, pycocotools, opencv-python, contourpy, matplotlib, huggingface_hub, tokenizers, timm, supervision, transformers, groundingdino
+  Attempting uninstall: numpy
+    Found existing installation: numpy 1.26.3
+    Uninstalling numpy-1.26.3:
+      Successfully uninstalled numpy-1.26.3
+Successfully installed addict-2.4.0 certifi-2025.6.15 charset_normalizer-3.4.2 colorama-0.4.6 contourpy-1.3.2 cycler-0.12.1 defusedxml-0.7.1 fonttools-4.58.5 groundingdino-0.1.0 huggingface_hub-0.33.2 idna-3.10 kiwisolver-1.4.8 matplotlib-3.10.3 numpy-2.2.6 opencv-python-4.12.0.88 packaging-25.0 platformdirs-4.3.8 pycocotools-2.0.10 pyparsing-3.2.3 python-dateutil-2.9.0.post0 pyyaml-6.0.2 regex-2024.11.6 requests-2.32.4 safetensors-0.5.3 scipy-1.15.3 six-1.17.0 supervision-0.25.1 timm-1.0.16 tokenizers-0.21.2 tomli-2.2.1 tqdm-4.67.1 transformers-4.53.1 urllib3-2.5.0 yapf-0.43.0
+
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>pip install -e .
+Obtaining file:///C:/Users/XIY144/Grounded-Segment-Anything/GroundingDINO
+  Installing build dependencies ... done
+  Checking if build backend supports build_editable ... done
+  Getting requirements to build editable ... done
+  Preparing editable metadata (pyproject.toml) ... done
+Requirement already satisfied: transformers in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from groundingdino==0.1.0) (4.53.1)
+Requirement already satisfied: addict in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from groundingdino==0.1.0) (2.4.0)
+Requirement already satisfied: yapf in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from groundingdino==0.1.0) (0.43.0)
+Requirement already satisfied: timm in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from groundingdino==0.1.0) (1.0.16)
+Requirement already satisfied: opencv-python in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from groundingdino==0.1.0) (4.12.0.88)
+Requirement already satisfied: supervision in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from groundingdino==0.1.0) (0.25.1)
+Requirement already satisfied: pycocotools in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from groundingdino==0.1.0) (2.0.10)
+Requirement already satisfied: numpy<2.3.0,>=2 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from opencv-python->groundingdino==0.1.0) (2.2.6)
+Requirement already satisfied: contourpy>=1.0.7 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from supervision->groundingdino==0.1.0) (1.3.2)
+Requirement already satisfied: defusedxml<0.8.0,>=0.7.1 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from supervision->groundingdino==0.1.0) (0.7.1)
+Requirement already satisfied: matplotlib>=3.6.0 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from supervision->groundingdino==0.1.0) (3.10.3)
+Requirement already satisfied: pillow>=9.4 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from supervision->groundingdino==0.1.0) (11.0.0)
+Requirement already satisfied: pyyaml>=5.3 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from supervision->groundingdino==0.1.0) (6.0.2)
+Requirement already satisfied: requests>=2.26.0 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from supervision->groundingdino==0.1.0) (2.32.4)
+Requirement already satisfied: scipy<2.0.0,>=1.10.0 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from supervision->groundingdino==0.1.0) (1.15.3)
+Requirement already satisfied: tqdm>=4.62.3 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from supervision->groundingdino==0.1.0) (4.67.1)
+Requirement already satisfied: cycler>=0.10 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from matplotlib>=3.6.0->supervision->groundingdino==0.1.0) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from matplotlib>=3.6.0->supervision->groundingdino==0.1.0) (4.58.5)
+Requirement already satisfied: kiwisolver>=1.3.1 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from matplotlib>=3.6.0->supervision->groundingdino==0.1.0) (1.4.8)
+Requirement already satisfied: packaging>=20.0 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from matplotlib>=3.6.0->supervision->groundingdino==0.1.0) (25.0)
+Requirement already satisfied: pyparsing>=2.3.1 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from matplotlib>=3.6.0->supervision->groundingdino==0.1.0) (3.2.3)
+Requirement already satisfied: python-dateutil>=2.7 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from matplotlib>=3.6.0->supervision->groundingdino==0.1.0) (2.9.0.post0)
+Requirement already satisfied: six>=1.5 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from python-dateutil>=2.7->matplotlib>=3.6.0->supervision->groundingdino==0.1.0) (1.17.0)
+Requirement already satisfied: charset_normalizer<4,>=2 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from requests>=2.26.0->supervision->groundingdino==0.1.0) (3.4.2)
+Requirement already satisfied: idna<4,>=2.5 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from requests>=2.26.0->supervision->groundingdino==0.1.0) (3.10)
+Requirement already satisfied: urllib3<3,>=1.21.1 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from requests>=2.26.0->supervision->groundingdino==0.1.0) (2.5.0)
+Requirement already satisfied: certifi>=2017.4.17 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from requests>=2.26.0->supervision->groundingdino==0.1.0) (2025.6.15)
+Requirement already satisfied: colorama in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from tqdm>=4.62.3->supervision->groundingdino==0.1.0) (0.4.6)
+Requirement already satisfied: torch in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from timm->groundingdino==0.1.0) (2.5.1+cu121)
+Requirement already satisfied: torchvision in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from timm->groundingdino==0.1.0) (0.20.1+cu121)
+Requirement already satisfied: huggingface_hub in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from timm->groundingdino==0.1.0) (0.33.2)
+Requirement already satisfied: safetensors in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from timm->groundingdino==0.1.0) (0.5.3)
+Requirement already satisfied: filelock in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from huggingface_hub->timm->groundingdino==0.1.0) (3.13.1)
+Requirement already satisfied: fsspec>=2023.5.0 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from huggingface_hub->timm->groundingdino==0.1.0) (2024.6.1)
+Requirement already satisfied: typing-extensions>=3.7.4.3 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from huggingface_hub->timm->groundingdino==0.1.0) (4.12.2)
+Requirement already satisfied: networkx in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from torch->timm->groundingdino==0.1.0) (3.3)
+Requirement already satisfied: jinja2 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from torch->timm->groundingdino==0.1.0) (3.1.4)
+Requirement already satisfied: sympy==1.13.1 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from torch->timm->groundingdino==0.1.0) (1.13.1)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from sympy==1.13.1->torch->timm->groundingdino==0.1.0) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from jinja2->torch->timm->groundingdino==0.1.0) (2.1.5)
+Requirement already satisfied: regex!=2019.12.17 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from transformers->groundingdino==0.1.0) (2024.11.6)
+Requirement already satisfied: tokenizers<0.22,>=0.21 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from transformers->groundingdino==0.1.0) (0.21.2)
+Requirement already satisfied: platformdirs>=3.5.1 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from yapf->groundingdino==0.1.0) (4.3.8)
+Requirement already satisfied: tomli>=2.0.1 in c:\users\xiy144\.conda\envs\gdino\lib\site-packages (from yapf->groundingdino==0.1.0) (2.2.1)
+Building wheels for collected packages: groundingdino
+  Building editable for groundingdino (pyproject.toml) ... done
+  Created wheel for groundingdino: filename=groundingdino-0.1.0-0.editable-py3-none-any.whl size=11183 sha256=f54659d41de1492bcd7d521f683bf10dfd978af98587257fed3b19f4376a7b98
+  Stored in directory: C:\Users\XIY144\AppData\Local\Temp\pip-ephem-wheel-cache-uxrdxh2m\wheels\40\d1\98\b8c53f9a1da486afa9d43c1fd5d130f55a518a56e3f03036da
+Successfully built groundingdino
+Installing collected packages: groundingdino
+  Attempting uninstall: groundingdino
+    Found existing installation: groundingdino 0.1.0
+    Uninstalling groundingdino-0.1.0:
+      Successfully uninstalled groundingdino-0.1.0
+Successfully installed groundingdino-0.1.0
+
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>python MyTest.py
+python: can't open file 'C:\\Users\\XIY144\\Grounded-Segment-Anything\\GroundingDINO\\MyTest.py': [Errno 2] No such file or directory
+
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO>cd ..
+
+(gdino) C:\Users\XIY144\Grounded-Segment-Anything>python MyTest.py
+FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+UserWarning: Failed to load custom C++ ops. Running on CPU mode Only!
+UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\aten\src\ATen\native\TensorShape.cpp:3596.)
+final text_encoder_type: bert-base-uncased
+FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+FutureWarning: The `device` argument is deprecated and will be removed in v5 of Transformers.
+UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.5 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+Traceback (most recent call last):
+  File "C:\Users\XIY144\Grounded-Segment-Anything\MyTest.py", line 13, in <module>
+    boxes, logits, phrases = predict(
+  File "C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO\groundingdino\util\inference.py", line 67, in predict
+    outputs = model(image[None], captions=[caption])
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\torch\nn\modules\module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\torch\nn\modules\module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO\groundingdino\models\GroundingDINO\groundingdino.py", line 314, in forward
+    hs, reference, hs_enc, ref_enc, init_box_proposal = self.transformer(
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\torch\nn\modules\module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\torch\nn\modules\module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO\groundingdino\models\GroundingDINO\transformer.py", line 258, in forward
+    memory, memory_text = self.encoder(
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\torch\nn\modules\module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\torch\nn\modules\module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO\groundingdino\models\GroundingDINO\transformer.py", line 577, in forward
+    output = checkpoint.checkpoint(
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\torch\_compile.py", line 32, in inner
+    return disable_fn(*args, **kwargs)
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\torch\_dynamo\eval_frame.py", line 632, in _fn
+    return fn(*args, **kwargs)
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\torch\utils\checkpoint.py", line 489, in checkpoint
+    return CheckpointFunction.apply(function, preserve, *args)
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\torch\autograd\function.py", line 575, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\torch\utils\checkpoint.py", line 264, in forward
+    outputs = run_function(*args)
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\torch\nn\modules\module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\torch\nn\modules\module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO\groundingdino\models\GroundingDINO\transformer.py", line 786, in forward
+    src2 = self.self_attn(
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\torch\nn\modules\module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\torch\nn\modules\module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO\groundingdino\models\GroundingDINO\ms_deform_attn.py", line 338, in forward
+    output = MultiScaleDeformableAttnFunction.apply(
+  File "C:\Users\XIY144\.conda\envs\gdino\lib\site-packages\torch\autograd\function.py", line 575, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File "C:\Users\XIY144\Grounded-Segment-Anything\GroundingDINO\groundingdino\models\GroundingDINO\ms_deform_attn.py", line 53, in forward
+    output = _C.ms_deform_attn_forward(
+NameError: name '_C' is not defined
