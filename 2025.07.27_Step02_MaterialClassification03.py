@@ -109,7 +109,6 @@ def main():
     points, colors, semantics, instances = load_labeled_ply(args.ply)
     grouped = group_points_by_instance(points, semantics, instances)
 
-    results = []
     updated_rows = []
     for i, row in df.iterrows():
         iid = int(row['Instance ID'])
@@ -120,18 +119,37 @@ def main():
 
         material, confidence = classify_material(crop, model, preprocess, tokenizer, device)
         pts = points[grouped[iid]]
+        clr = colors[grouped[iid]]
+        label = row['Label']
         try:
-            corners, _ = estimate_oriented_bbox(pts)
+            corners, obb = estimate_oriented_bbox(pts)
+            print(f"[{timestamp()}] [✓] Instance {iid}: {material} ({confidence:.2%})")
             flat_corners = corners.flatten().tolist()
+
+            # Visualization of the bounding box
+            cloud = o3d.geometry.PointCloud()
+            cloud.points = o3d.utility.Vector3dVector(pts)
+            cloud.colors = o3d.utility.Vector3dVector(clr)
+            bbox_lines = o3d.geometry.LineSet.create_from_oriented_bounding_box(obb)
+            bbox_lines.paint_uniform_color([0.5, 0.0, 0.0])
+            axis = o3d.geometry.TriangleMesh.create_coordinate_frame(size=0.5, origin=cloud.get_center())
+            o3d.visualization.draw_geometries(
+                    [cloud, bbox_lines, axis],
+                    window_name=f"Instance {iid}: {label}",
+                    zoom=0.7,
+                    front=[0.0, 0.0, -1.0],
+                    lookat=cloud.get_center(),
+                    up=[0.0, -1.0, 0.0]
+            )
         except Exception as e:
             print(f"[{timestamp()}] [ERROR] Instance {iid} geometry: {e}")
             flat_corners = [None] * 12
         updated_rows.append([
-            row['Scene Type'], iid, row['Label'], material, confidence
+            row['Scene Type'], row['Confidence'], iid, row['Label'], row['Area'], material, confidence
         ] + flat_corners)
 
     corner_labels = [f"P{i}_{axis}" for i in range(1, 5) for axis in ['x', 'y', 'z']]
-    header = ["Scene Type", "Instance ID", "Label", "Material", "Confidence"] + corner_labels
+    header = ["Scene Type", "Confidence", "Instance ID", "Label", "Area", "Material", "Confidence"] + corner_labels
 
     with open(metadata_path, "w", newline='') as f:
         writer = csv.writer(f)
