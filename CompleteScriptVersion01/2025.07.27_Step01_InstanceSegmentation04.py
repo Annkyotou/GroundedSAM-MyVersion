@@ -8,6 +8,7 @@ from PIL import Image
 from math import pi
 from plyfile import PlyElement, PlyData
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import matplotlib.pyplot as plt
 import csv
 
 import pye57
@@ -18,7 +19,7 @@ from segment_anything.segment_anything import sam_model_registry, SamPredictor
 from GroundingDINO.groundingdino.models import build_model
 from GroundingDINO.groundingdino.util.utils import get_phrases_from_posmap, clean_state_dict
 from GroundingDINO.groundingdino.datasets import transforms as T
-import GroundingDINO.groundingdino.util.slconfig as slconfig
+from GroundingDINO.groundingdino.util.slconfig import SLConfig
 
 def timestamp():
     return time.strftime('%Y-%m-%d %H:%M:%S')
@@ -98,7 +99,7 @@ def classify_scene(image, model, preprocess, tokenizer, device):
     return label, confidence
 
 def load_grounded_sam_models(device, config_file, dino_checkpoint, sam_checkpoint, sam_version="vit_h"):
-    args = slconfig.SLConfig.fromfile(config_file)
+    args = SLConfig.fromfile(config_file)
     args.device = device
     model = build_model(args)
     ckpt = torch.load(dino_checkpoint, map_location=device)
@@ -118,18 +119,26 @@ def segment_image(image_path, model, predictor, device, text_prompt, base_name):
         T.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ])
     image_tensor, _ = transform(image_pil, None)
+    text_prompt = text_prompt.lower()
+    text_prompt = text_prompt.strip()
+    if not text_prompt.endswith("."):
+        text_prompt += "."
+
+    print(f"[DEBUG] Final processed text_prompt: \"{text_prompt}\"")
+    model = model.to(device)
+    
     with torch.no_grad():
         outputs = model(image_tensor[None].to(device), captions=[text_prompt])
     logits = outputs["pred_logits"].sigmoid()[0].cpu()
     boxes = outputs["pred_boxes"][0].cpu()
 
-    mask = logits.max(dim=1)[0] > 0.3
+    mask = logits.max(dim=1)[0] > 0.30
     logits_filt = logits[mask]
     boxes_filt = boxes[mask]
 
-    tokenizer = model.tokenizer
-    tokenized = tokenizer(text_prompt)
-    phrases = [get_phrases_from_posmap(logit > 0.25, tokenized, tokenizer) for logit in logits_filt]
+    tokenlizer = model.tokenizer
+    tokenized = tokenlizer(text_prompt)
+    phrases = [get_phrases_from_posmap(logit > 0.25, tokenized, tokenlizer) for logit in logits_filt]
 
     cv_image = cv2.cvtColor(cv2.imread(image_path), cv2.COLOR_BGR2RGB)
     predictor.set_image(cv_image)
@@ -144,7 +153,7 @@ def segment_image(image_path, model, predictor, device, text_prompt, base_name):
     masks, _, _ = predictor.predict_torch(
         point_coords=None,
         point_labels=None,
-        boxes=transformed_boxes,
+        boxes=transformed_boxes.to(device),
         multimask_output=False
     )
 
@@ -163,6 +172,20 @@ def segment_image(image_path, model, predictor, device, text_prompt, base_name):
         print(f"[{timestamp()}] [INFO] Mask {idx + 1}: \"{phrases[idx]}\" | Area: {area} pixels")
 
     tifffile.imwrite(f"./outputs/{base_name}_pano_mask.tif", labeled_mask)
+
+    # Save visualization
+    image_bgr = cv2.imread(image_path)
+    image_rgb = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB)
+    
+    save_mask_visualization(
+        os.path.join("./outputs", f"{base_name}_pano_mask.jpg"),
+        masks,
+        boxes_filt,
+        phrases,
+        image_rgb
+    )
+    print(f"[{timestamp()}] [✓] Saved masked image to: ./outputs/{base_name}_pano_mask.jpg")
+
     return labeled_mask, instance_to_class, instance_areas
 
 def label_projection(mask, used_points, sensor_pos, height):
@@ -218,11 +241,96 @@ def write_partial_metadata(output_path, scene_type, confidence, instance_to_clas
         writer.writerows(rows)
     print(f"[{timestamp()}] [✓] Created metadata file: {output_path}")
 
+def interactive_click_prompt(image_path, display_size=(1280, 720)):
+    image = cv2.imread(image_path)
+    original_shape = image.shape[:2]  # (H, W)
+    scale_x = display_size[0] / original_shape[1]
+    scale_y = display_size[1] / original_shape[0]
+    scale = min(scale_x, scale_y)
+
+    resized = cv2.resize(image, (0, 0), fx=scale, fy=scale)
+    clicks = []
+
+    def click_callback(event, x, y, flags, param):
+        if event == cv2.EVENT_LBUTTONDOWN:
+            clicks.append(((x / scale, y / scale), 1))  # Rescale back to original image
+            cv2.circle(resized, (x, y), 5, (0, 255, 0), -1)
+        elif event == cv2.EVENT_RBUTTONDOWN:
+            clicks.append(((x / scale, y / scale), 0))
+            cv2.circle(resized, (x, y), 5, (0, 0, 255), -1)
+        cv2.imshow("Click Prompt", resized)
+
+    print("[INFO] Left click = foreground, Right click = background, ESC = finish")
+    cv2.imshow("Click Prompt", resized)
+    cv2.setMouseCallback("Click Prompt", click_callback)
+    while True:
+        if cv2.waitKey(1) & 0xFF == 27:
+            break
+    cv2.destroyAllWindows()
+
+    coords, lbls = zip(*clicks) if clicks else ([], [])
+    return list(coords), list(lbls)
+
+def segment_image_manual(image_path, predictor, device, base_name):
+    coords, lbls = interactive_click_prompt(image_path)
+    if not coords:
+        print("[WARN] No points clicked. Skipping segmentation.")
+        return np.zeros(cv2.imread(image_path).shape[:2], dtype=np.uint8), {}, {}
+
+    image_bgr = cv2.imread(image_path)
+    image_rgb = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB)
+    predictor.set_image(image_rgb)  # ✅ ADD THIS LINE
+
+    point_coords = torch.tensor([coords], dtype=torch.float).to(device)
+    point_labels = torch.tensor([lbls], dtype=torch.int).to(device)
+
+    masks, _, _ = predictor.predict_torch(
+        point_coords=point_coords,
+        point_labels=point_labels,
+        multimask_output=True
+    )
+
+    mask_np = masks[0, 0].cpu().numpy() > 0
+    labeled_mask = np.zeros(mask_np.shape, dtype=np.uint16)
+    labeled_mask[mask_np] = 1
+    tifffile.imwrite(f"./outputs/{base_name}_pano_mask.tif", labeled_mask)
+
+    return labeled_mask, {1: 'manual'}, {1: int(np.sum(mask_np))}
+
+
+def show_mask(mask, ax, random_color=False):
+    if random_color:
+        color = np.concatenate([np.random.random(3), np.array([0.6])], axis=0)  # RGBA
+    else:
+        color = np.array([30/255, 144/255, 255/255, 0.6])
+    h, w = mask.shape[-2:]
+    mask_image = mask.reshape(h, w, 1) * color.reshape(1, 1, -1)
+    ax.imshow(mask_image)
+
+def show_box(box, ax, label):
+    x0, y0 = box[0], box[1]
+    w, h = box[2] - box[0], box[3] - box[1]
+    ax.add_patch(plt.Rectangle((x0, y0), w, h, edgecolor='green', facecolor=(0, 0, 0, 0), lw=2))
+    ax.text(x0, y0, label, fontsize=8, bbox=dict(facecolor='white', alpha=0.6, edgecolor='none', pad=1))
+
+def save_mask_visualization(output_path, mask_list, boxes, labels, image_rgb):
+    fig, ax = plt.subplots(figsize=(10, 10))
+    ax.imshow(image_rgb)
+
+    for idx, mask in enumerate(mask_list):
+        show_mask(mask.cpu().numpy(), ax, random_color=True)
+        show_box(boxes[idx].numpy(), ax, labels[idx])
+
+    ax.axis('off')
+    plt.savefig(output_path, bbox_inches='tight', dpi=300, pad_inches=0.0)
+    plt.close()
+
+
 def main():
     parser = argparse.ArgumentParser(description="Step01+02: Scene Classification + Instance Segmentation")
     parser.add_argument("-input_e57", required=False, default="./assets/2ndLab-7.e57", help="Path to input .e57 file")
     parser.add_argument("--image_height", type=int, default=2048, help="Height of panorama image")
-    parser.add_argument("--text_prompt", default="Ceiling . Wall . Door . Window . Floor")
+    parser.add_argument("--text_prompt", default="Ceiling . Wall . Door . Window . Floor .")
     parser.add_argument("--config", default="GroundingDINO/groundingdino/config/GroundingDINO_SwinT_OGC.py")
     parser.add_argument("--dino_ckpt", default="grounded_sam_checkpoints/groundingdino_swint_ogc.pth")
     parser.add_argument("--sam_ckpt", default="grounded_sam_checkpoints/sam_vit_h_4b8939.pth")
@@ -241,7 +349,7 @@ def main():
     print(f"[{timestamp()}] [✓] Saved panorama to: {pano_img_path}")
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    model_clip, preprocess_clip, tokenizer_clip = open_clip.create_model_and_transforms('ViT-B-32', pretrained='laion400m_e32', device=device)
+    model_clip, preprocess_clip, tokenizer_clip = open_clip.create_model_and_transforms('ViT-B-32', pretrained='laion400m_e32', device=device, force_quick_gelu=True)
     tokenizer_clip = open_clip.get_tokenizer('ViT-B-32')
 
     print(f"[{timestamp()}] Classifying scene...")
@@ -249,6 +357,7 @@ def main():
 
     print(f"[{timestamp()}] Performing instance segmentation...")
     model_gs, predictor = load_grounded_sam_models(device, args.config, args.dino_ckpt, args.sam_ckpt)
+    # mask, instance_to_class, instance_areas = segment_image_manual(pano_img_path, predictor, device, base_name)
     mask, instance_to_class, instance_areas = segment_image(pano_img_path, model_gs, predictor, device, args.text_prompt, base_name)
     instance_ids = label_projection(mask, used_points, sensor_pos, args.image_height)
     write_labeled_ply(ply_output_path, used_points, used_colors, instance_ids, instance_to_class)
